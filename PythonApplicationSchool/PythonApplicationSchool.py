@@ -237,41 +237,4 @@ from ipaddress import*
 #print(list[-1])
 
 
-#nums = [int(x) for x in open("17.txt")]
-#minn = min(nums)
-#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 111 == minn or nums[i + 1] % 111 == minn]
-#print(len(t), min(t))
 
-
-#nums = [int(x) for x in open("17.txt")]
-#minn = min(nums)
-#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 16 == minn or nums[i + 1] % 16 == minn]
-#print(len(t), max(t))
-
-
-#def Del(x, y):
-#    while x != 0 and y != 0:
-#        if x > y:
-#            x %= y
-#        else:
-#            y %= x
-#    return x + y
-#
-#nums = [int(x) for x in open("17.txt")]
-#minn = min(nums)
-#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 2 == 0 and nums[i + 1] % 2 == 0 and Del(nums[i], nums[i + 1]) > 100]
-#print(len(t), max(t))
-
-
-#nums = [int(x) for x in open("17.txt")]
-#maxn = max([x for x in nums if x % 118 == 0 and abs(x) % 10 != 8])
-#t = [(nums[i] + nums[i + 1] + nums[i + 2])**2 for i in range(len(nums) - 2) if (nums[i] + nums[i + 1] + nums[i + 2]) > maxn and (nums[i] % 118 == 0 or nums[i + 1] % 118 == 0 or nums[i+2] % 118 == 0) and (abs(nums[i]) % 1000 == 118 or abs(nums[i+1]) % 1000 == 118 or abs(nums[i+2]) % 1000 == 118)]
-#print(len(t), max(t))
-
-
-nums = [int(x) for x in open("17.txt")]
-minn = min([x for x in nums if abs(x) % 100 == 31])
-sumabs = abs(min([x for x in nums if abs(x) % 100 == 31]) + max([x for x in nums if abs(x) % 100 == 31]))
-print(sumabs)
-t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] > sumabs and nums[i+1] > sumabs]
-print(len(t), max(t))
