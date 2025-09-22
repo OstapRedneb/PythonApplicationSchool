@@ -295,3 +295,87 @@ from ipaddress import*
 
 #print(((1121 * 1122 * 1123 * 1124 * 1125 * 1126 * 1127 * 1128) / 4 + (1121 * 1122) / 2) % 10000000000)
 
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((w <= (x==z)) or (not(y <= z))) == 0:
+#                    print(z ,x, w, y)
+
+
+#def Build(n):
+#    x = oct(n)[2:]
+#    if n % 8 == 0:
+#        x += '1'
+#        x = '2' + x
+#    else:
+#        x += str(n % 8)
+#    return int(x, 8)
+#
+#for n in range(1, 10000):
+#    r = Build(n)
+#    if r <= 345:
+#        print(n)
+
+#file = open("File1.txt")
+#k = 0
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    n2 = [x for x in nums if nums.count(x) == 2]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    if len(n2) == 2 and len(n1) == 4:
+#        if n2[0] >= (sum(n1) / 4):
+#            k += sum(nums)
+#print(k)
+
+#list =[]
+#for n in range(5, 4000):
+#    s = '4' + n * '5'
+#    while '45' in s or '155' in s or '1555' in s:
+#        if '45' in s:
+#            s = s.replace('45', '5', 1)
+#        if '155' in s:
+#            s = s.replace('155', '515', 1)
+#        if '1555' in s:
+#            s = s.replace('1555', '141', 1)
+#    x = sum(map(int, s))
+#    list.append(x)
+#print(min(list))
+
+
+#list =[]
+#n = ip_newtwork('223.184.69.7/223.184.0.0', 0)
+#for ip in n:
+#    list.append(int(ip.split()[2]))
+#print(max(list))
+
+#def f5(a):
+#    s = ''
+#    while a != 0:
+#        s = str(a % 5) + s
+#        a //= 5
+#    return s
+#
+#a = 4 * 625**1820 + 4 * 125**1830 - 4*25**1840 - 3 * 5 ** 1850 - 1860
+#s = f5(a)
+#print(sum(map(int, s)))
+
+
+#file = open('14_17.txt')
+#nums = [int(x) for x in file]
+#minn = min([x for x in nums if abs(x) % 100 == 43])
+#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if (nums[i] % 10000 != 0) + (nums[i+1] % 10000 != 0) > 0 and (nums[i] + nums[i+1])**2 >= minn**2]
+#print(len(t), abs(min(t)))
+
+
+def Build(e, x, k):
+    if (e + x) >= 333: return k % 2 == 0
+    if k % 2 == 0: return 0
+
+    h = [Build(e, x+2, k-1), Build(e+2, x, k-1), Build(e*2, x, k-1), Build(e, x*2, k-1)]
+    return sum(h) if k % 2 == 0 else any(h)
+
+print('19', *(x for x in range(1, 322) if Build(11, x, 2)))
+print('20', *(x for x in range(1, 322) if Build(11, x, 3) and not Build(11, x, 1)))
+print('21', *(x for x in range(1, 322) if Build(11, x, 4) and not Build(11, x, 2)))
