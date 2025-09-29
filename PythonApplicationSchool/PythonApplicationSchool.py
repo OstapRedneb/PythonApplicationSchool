@@ -369,13 +369,143 @@ from ipaddress import*
 #print(len(t), abs(min(t)))
 
 
-def Build(e, x, k):
-    if (e + x) >= 333: return k % 2 == 0
-    if k % 2 == 0: return 0
+#def Build(e, x, k):
+#    if (e + x) >= 333: return k % 2 == 0
+#    if k % 2 == 0: return 0
+#
+#    h = [Build(e, x+2, k-1), Build(e+2, x, k-1), Build(e*2, x, k-1), Build(e, x*2, k-1)]
+#    return sum(h) if k % 2 == 0 else any(h)
+#
+#print('19', *(x for x in range(1, 322) if Build(11, x, 2)))
+#print('20', *(x for x in range(1, 322) if Build(11, x, 3) and not Build(11, x, 1)))
+#print('21', *(x for x in range(1, 322) if Build(11, x, 4) and not Build(11, x, 2)))
 
-    h = [Build(e, x+2, k-1), Build(e+2, x, k-1), Build(e*2, x, k-1), Build(e, x*2, k-1)]
-    return sum(h) if k % 2 == 0 else any(h)
 
-print('19', *(x for x in range(1, 322) if Build(11, x, 2)))
-print('20', *(x for x in range(1, 322) if Build(11, x, 3) and not Build(11, x, 1)))
-print('21', *(x for x in range(1, 322) if Build(11, x, 4) and not Build(11, x, 2)))
+
+
+
+
+
+
+##VAR-1
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if (z or (x == (y <= w))) == 0:
+#                    print(y, z, w, x)
+
+def ToSystem(number, system, convertation='str'):
+    s = ''
+    systemList = []
+    while number != 0:
+        s = str(number % system) + s
+        systemList.append(number % system)
+        number //= system
+    if convertation == 'list':
+        systemList.reverse()
+        return systemList
+    return s
+
+
+#def Bild(n):
+#    x = ToSystem(n, 3)
+#    if n % 5 == 0:
+#        x += x[-2:]
+#    else:
+#        u = 7 * (n % 5)
+#        x += ToSystem(u, 3)
+#    return int(x, 3)
+#
+#for n in range(1, 10000):
+#    r = Bild(n)
+#    if r <= 273:
+#        print(n)
+
+
+#tracer(0)
+#speed(10000)
+#k = 20
+#down()
+#screensize(3000, 3000)
+#
+#for i in range(5):
+#    forward(k*42)
+#    right(270)
+#    forward(k*55)
+#    left(90)
+#up()
+#forward(k*17)
+#right(90)
+#forward(k*12)
+#left(90)
+#down()
+#for i in range(14):
+#    forward(k*14)
+#    left(90)
+#    forward(k*200)
+#    left(90)
+#up()
+#
+#for x in range(-75, 75):
+#    for y in range(-75, 75):
+#        goto(x*k, y*k)
+#        dot()
+#done()
+
+
+#print(16 / 5)
+
+#k = 0
+#for s in product('абинорту', repeat=5):
+#    k += 1
+#    x = ''.join(s)
+#    if k % 2 != 0 and x[0] != 'а' and x[0] != 'и' and x[0] != 'о' and x[0] != 'у' and x.count('б') <= 1 and x.count('у') <= 1 and x.count('р') <= 1 and x.count('а') <= 1 and x.count('т') <= 1 and x.count('и') <= 1 and x.count('н') <= 1 and x.count('о') <= 1:
+#        print(k)
+
+
+#k=0
+#file = open('File1.txt')
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    nums.sort()
+#    if len(n1) == 5 and (nums[0] + nums[4]) <= (nums[1] + nums[2] + nums[3]):
+#        k += 1
+#print(k)
+
+
+#print(2 * 8 * 1024**3 / 10 / 31922)
+
+
+#n = ip_network('150.122.11.21/255.255.254.0', 0)
+#b = f'{n[1]:b}'
+#print(b.count('1'))
+
+
+#a = 5*729**2024 + 3*243**1413 - 7*81**169 - 2*9**107 + 3017
+#systemList = ToSystem(a, 27, 'list')
+#print(sum([systemList[i] for i in range(0, len(systemList)) if systemList[i] <= 25]))
+
+
+#def Bild(x, y, a):
+#    f = (2 * x * y > a) or (y < x) or (x < 15)
+#    return f
+#
+#
+#for a in range(500, 1, -1):
+#    if all([Bild(x, y, a) for x in range(1, 500) for y in range(1, 500)]):
+#        print(a)
+
+
+def Build(x, k):
+    if x >= 444: return k % 2 == 0
+    if k == 0: return 0
+
+    h = [Build(x+2, k-1), Build(x+5, k-1), Build(x*3, k-1)]
+    return all(h) if k % 2 == 0 else any(h)
+
+print('19', [x for x in range(1, 401) if Build(x, 2)])
+print('20', [x for x in range(1, 401) if Build(x, 3) and not Build(x, 1)])
+print('21', [x for x in range(1, 401) if Build(x, 4) and not Build(x, 2)])
