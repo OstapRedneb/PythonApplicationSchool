@@ -511,17 +511,41 @@ def ToSystem(number, system, convertation='str'):
 #print('21', [x for x in range(1, 401) if Build(x, 4) and not Build(x, 2)])
 
 
-s = open(f"24 (12).txt").read()
-reultList = []
-news = ''
+#s = open(f"24 (12).txt").read()
+#reultList = []
+#news = ''
+#
+#
+#for i in range(0, len(s) - 1):
+#    if s[i] < s[i+1]:
+#        news += s[i]
+#    else:
+#        news += s[i]
+#        reultList.append(news)
+#        news = ''
+#
+#print(len([string for string in reultList if len(string) == 5]))
 
 
-for i in range(0, len(s) - 1):
-    if s[i] < s[i+1]:
-        news += s[i]
-    else:
-        news += s[i]
-        reultList.append(news)
-        news = ''
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((not(x <= z)) or (w <= (y == z))) == 0:
+#                    print(w, z, y, x)
 
-print(len([string for string in reultList if len(string) == 5]))
+
+def Build(x, k):
+    if x <= 26: return k % 2 == 0
+    if k == 0: return 0
+
+    newx = x // 3
+    if x % 3 != 0:
+        newx += 1
+
+    h = [Build(x-1, k-1), Build(x-4, k-1), Build(newx, k-1)]
+    return all(h) if k % 2 == 0 else any(h)
+
+print('19', [x for x in range(27, 401) if Build(x, 2)])
+print('20', [x for x in range(27, 401) if Build(x, 3) and not Build(x, 1)])
+print('21', [x for x in range(27, 401) if Build(x, 4) and not Build(x, 2)])
