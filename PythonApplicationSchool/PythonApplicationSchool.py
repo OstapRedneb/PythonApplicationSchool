@@ -535,17 +535,130 @@ def ToSystem(number, system, convertation='str'):
 #                    print(w, z, y, x)
 
 
-def Build(x, k):
-    if x <= 26: return k % 2 == 0
-    if k == 0: return 0
+#def Build(x, k):
+#    if x <= 26: return k % 2 == 0
+#    if k == 0: return 0
+#
+#    newx = x // 3
+#    if x % 3 != 0:
+#        newx += 1
+#
+#    h = [Build(x-1, k-1), Build(x-4, k-1), Build(newx, k-1)]
+#    return all(h) if k % 2 == 0 else any(h)
+#
+#print('19', [x for x in range(27, 401) if Build(x, 2)])
+#print('20', [x for x in range(27, 401) if Build(x, 3) and not Build(x, 1)])
+#print('21', [x for x in range(27, 401) if Build(x, 4) and not Build(x, 2)])
 
-    newx = x // 3
-    if x % 3 != 0:
-        newx += 1
+#fs = open("24 (12).txt").read()
+#l = []
+#s = 'D'
+#idx = fs.index('D')
+#lenx = len(fs) - idx
+#
+#for i in range(idx + 1, lenx):
+#    if fs[i] != 'D':
+#        s += fs[i]
+#    else:
+#        s += fs[i]
+#        l.append(s)
+#        s = 'D'
+#
+#print(len(max([s for s in l if s.count('O') <= 2], key=len)))
 
-    h = [Build(x-1, k-1), Build(x-4, k-1), Build(newx, k-1)]
-    return all(h) if k % 2 == 0 else any(h)
 
-print('19', [x for x in range(27, 401) if Build(x, 2)])
-print('20', [x for x in range(27, 401) if Build(x, 3) and not Build(x, 1)])
-print('21', [x for x in range(27, 401) if Build(x, 4) and not Build(x, 2)])
+#fs = open("24 (12).txt").read()
+#s = ''
+#ky = 0
+#l = []
+#for i in range(fs.find('Y') + 1, len(fs)):
+#    if fs[i] == 'Y':
+#        ky += 1
+#    if ky == 81:
+#        if s.count('2025') >= 90:
+#            l.append(s)
+#
+#        s = s[s.find('Y') + 1:]
+#        ky -= 1
+#    else:
+#        s += fs[i]
+#print(len(max(l, key=len)))
+
+
+#fs = open("24 (12).txt").read()
+#s = ''
+#ky = 0
+#l = []
+#for i in range(fs.find('*') + 1, 6817770):
+#    ky+=1
+#    continue
+#    if fs[i] == 'Y':
+#        ky += 1
+#    if ky == 81:
+#        if s.count('') >= 90:
+#            l.append(s)
+#
+#        s = s[s.find('') + 1:]
+#        ky -= 1
+#    else:
+#        s += fs[i]
+#print(ky)
+
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if x and (w == (z == (y and w))):
+#                    print(x, y, z, w)
+
+
+#def Build(n):
+#    x = ToSystem(n, 3)
+#    if sum(map(int, x)) % 9 == 0:
+#        x += '2'
+#    else:
+#        x += ToSystem(sum(map(int, x)) % 9 , 3)
+#    return int(x, 3)
+#
+#m = 10000000
+#for n in range(1, 10000):
+#    if n > 166:
+#        m = min(m, Build(n))
+#print(m)
+
+
+#k = 0
+#for h in range(0, 24):
+#    sh = str(h)
+#    if h < 10:
+#        sh = '0' + sh
+#
+#    for m in range(0, 60):
+#        sm = str(m)
+#        if m < 10:
+#            sm = '0' + sm
+#        if sum(map(int, sh)) == sum(map(int, sm)) and int(sh[0]) % 2 != 0 and int(sh[1]) % 2 != 0 and int(sm[0]) % 2 != 0 and int(sm[1]) % 2 != 0:
+#            k += 1
+#print(k)
+
+
+#def Build(a):
+#    if a == 100: return 1
+#    if a > 105: return 0
+#    if a % 3 == 0: return 0
+#
+#    h = [Build(a - 1), Build(a + 3), Build(a * 2)]
+#    return sum(h)
+#
+#print(Build(5))
+
+
+def FindDels(num):
+    l = []
+    for i in range(1, num + 1):
+        if num % i == 0:
+            l.append(i)
+    return i
+
+for n in range(13475125, 100000000):
