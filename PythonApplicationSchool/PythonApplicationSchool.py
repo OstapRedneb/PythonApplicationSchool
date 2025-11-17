@@ -400,13 +400,20 @@ def ToSystem(number, system, convertation='str'):
     s = ''
     systemList = []
     while number != 0:
-        s = str(number % system) + s
+        s = TryParseToSystem(number % system) + s
         systemList.append(number % system)
         number //= system
     if convertation == 'list':
         systemList.reverse()
         return systemList
     return s
+
+def TryParseToSystem(n):
+    systemList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+    if n > 9:
+        return systemList[n - 10]
+
+    return str(n)
 
 
 #def Bild(n):
@@ -654,11 +661,68 @@ def ToSystem(number, system, convertation='str'):
 #print(Build(5))
 
 
-def FindDels(num):
-    l = []
-    for i in range(1, num + 1):
-        if num % i == 0:
-            l.append(i)
-    return i
+#def FindDels(num):
+#    l = []
+#    for i in range(1, num + 1):
+#        if num % i == 0:
+#            l.append(i)
+#    return i
+#
+#for n in range(13475125, 100000000):
 
-for n in range(13475125, 100000000):
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((x == y) or z or (not(x <= w))) == 0:
+#                    print(x, z, w, y)
+
+
+#def Build(n):
+#    x = ToSystem(n, 4)
+#    if x.count('1') % 2 == 0:
+#        x = x.replace('1', '2')
+#    else:
+#        x += ToSystem(x.count('1'), 4)
+#    return int(x, 4)
+#
+#m = -100000000
+#for n in range(1, 10000):
+#    r = Build(n)
+#    if r <= 179:
+#        m = max(m, Build(n))
+#print(m)
+
+#i = 0
+#for s in product('гжсцэ', repeat=6):
+#    i+=1
+#    s = ''.join(s)
+#    if s[0] != 'г' and s[-1] != 'г' and i % 2 == 0 and (not('сс' in s)):
+#        print(i)
+
+
+#n = 0
+#i = 0
+#file = open('File1.txt')
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    nch = [x for x in nums if x % 2 == 0]
+#    nech = [x for x in nums if x % 2 != 0]
+#    if len(n1) == 6 and len(nch) == 3 and len(nech) == 3:
+#        n += sum(nums)
+#        i += 6
+#print(n / i)
+
+
+#for i in range(1, 32):
+#    ip1 = ip_network(f'238.226.158.88/{i}')
+#    ip2 = ip_network(f'238.226.157.149/{i}')
+
+
+
+for x in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
+    a = int(f'183{x}89957', 22) - int(f'80{x}33', 22) - int(f'521{x}6', 22)
+    if a % 21 == 0:
+        print(a / 21)
