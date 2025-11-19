@@ -1,6 +1,7 @@
 from turtle import*
 from itertools import*
 from ipaddress import*
+from math import*
 
 ##������� 2
 #for x in range(0, 2):
@@ -722,7 +723,62 @@ def TryParseToSystem(n):
 
 
 
-for x in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
-    a = int(f'183{x}89957', 22) - int(f'80{x}33', 22) - int(f'521{x}6', 22)
-    if a % 21 == 0:
-        print(a / 21)
+#for x in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']:
+#    a = int(f'183{x}89957', 22) - int(f'80{x}33', 22) - int(f'521{x}6', 22)
+#    if a % 21 == 0:
+#        print(a / 21)
+
+
+
+m = 2000000
+
+s = []
+for i in range(m + 1):
+    s.append(True)
+
+s[0] = s[1] = False
+
+for i in range(2, int(m**0.5) + 1):
+    if s[i]:
+        for j in range(i * i, m + 1, i):
+            s[j] = False
+
+
+p = []
+for i in range(2, m + 1):
+    if s[i] and str(i).count('5') == 1:
+        p.append(i)
+
+
+count = 0
+n = 1324728
+results = []
+
+while count < 5:
+    temp = n
+    i = 2
+    divisors = []
+    
+    while i * i <= temp:
+        if temp % i == 0:
+            divisors.append(i)
+            temp = temp // i
+        else:
+            i += 1
+    
+    if temp > 1:
+        divisors.append(temp)
+    
+    
+    if len(divisors) == 2:
+        a, b = divisors
+        if str(a).count('5') == 1 and str(b).count('5') == 1:
+            max_prime = max(a, b)
+            results.append((n, max_prime))
+            count += 1
+    
+    n += 1
+
+
+for num, max_div in results:
+    print(max_div, num)
