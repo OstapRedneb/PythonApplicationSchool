@@ -730,55 +730,112 @@ def TryParseToSystem(n):
 
 
 
-m = 2000000
+#m = 2000000
+#
+#s = []
+#for i in range(m + 1):
+#    s.append(True)
+#
+#s[0] = s[1] = False
+#
+#for i in range(2, int(m**0.5) + 1):
+#    if s[i]:
+#        for j in range(i * i, m + 1, i):
+#            s[j] = False
+#
+#
+#p = []
+#for i in range(2, m + 1):
+#    if s[i] and str(i).count('5') == 1:
+#        p.append(i)
+#
+#
+#count = 0
+#n = 1324728
+#results = []
+#
+#while count < 5:
+#    temp = n
+#    i = 2
+#    divisors = []
+#    
+#    while i * i <= temp:
+#        if temp % i == 0:
+#            divisors.append(i)
+#            temp = temp // i
+#        else:
+#            i += 1
+#    
+#    if temp > 1:
+#        divisors.append(temp)
+#    
+#    
+#    if len(divisors) == 2:
+#        a, b = divisors
+#        if str(a).count('5') == 1 and str(b).count('5') == 1:
+#            max_prime = max(a, b)
+#            results.append((n, max_prime))
+#            count += 1
+#    
+#    n += 1
+#
+#
+#for num, max_div in results:
+#    print(max_div, num)
 
-s = []
-for i in range(m + 1):
-    s.append(True)
 
-s[0] = s[1] = False
+def find_cnter(cl):
+    t = []
+    minr = 10 ** 8
 
-for i in range(2, int(m**0.5) + 1):
-    if s[i]:
-        for j in range(i * i, m + 1, i):
-            s[j] = False
+    for a in cl:
+        x1, y1 = a[0], a[1]
+        sumr = 0
+        for b in cl:
+            x2, y2 = b[0], b[1]
+            sumr += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+        if minr > sumr:
+            minr = sumr
+            t = a
+    return t
 
-
-p = []
-for i in range(2, m + 1):
-    if s[i] and str(i).count('5') == 1:
-        p.append(i)
-
-
-count = 0
-n = 1324728
-results = []
-
-while count < 5:
-    temp = n
-    i = 2
-    divisors = []
-    
-    while i * i <= temp:
-        if temp % i == 0:
-            divisors.append(i)
-            temp = temp // i
-        else:
-            i += 1
-    
-    if temp > 1:
-        divisors.append(temp)
-    
-    
-    if len(divisors) == 2:
-        a, b = divisors
-        if str(a).count('5') == 1 and str(b).count('5') == 1:
-            max_prime = max(a, b)
-            results.append((n, max_prime))
-            count += 1
-    
-    n += 1
+#cl1, cl2 = [], []
+#for s in open("27_A.txt"):
+#    xs, ys = s.split()
+#    x, y = float(xs), float(ys)
+#    if (x < 6):
+#        cl1.append([x, y])
+#    else:
+#        cl2.append([x, y])
+#
+#center1 = find_cnter(cl1)
+#center2 = find_cnter(cl2)
+#
+#x1, y1 = center1[0], center1[1]
+#x2, y2 = center2[0], center2[1]
+#
+#print(int((x1 + x2) / 2 * 100), int((y1 + y2) / 2 * 100))
 
 
-for num, max_div in results:
-    print(max_div, num)
+cl1, cl2, cl3 = [], [], []
+for s in open("27_B.txt"):
+
+    xs, ys = s.split()
+    x, y = float(xs), float(ys)
+
+    if (y < x and y < (-x + 8)):
+        cl1.append([x, y])
+    elif y > x and x < 4:
+        cl2.append([x, y])
+    else:
+        cl3.append([x, y])
+
+center1 = find_cnter(cl1)
+center2 = find_cnter(cl2)
+center3 = find_cnter(cl3)
+
+x1, y1 = center1[0], center1[1]
+x2, y2 = center2[0], center2[1]
+x3, y3 = center3[0], center3[1]
+
+print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
