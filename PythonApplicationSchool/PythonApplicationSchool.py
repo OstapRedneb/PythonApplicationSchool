@@ -784,20 +784,20 @@ def TryParseToSystem(n):
 #    print(max_div, num)
 
 
-def find_cnter(cl):
-    t = []
-    minr = 10 ** 8
-
-    for a in cl:
-        x1, y1 = a[0], a[1]
-        sumr = 0
-        for b in cl:
-            x2, y2 = b[0], b[1]
-            sumr += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
-        if minr > sumr:
-            minr = sumr
-            t = a
-    return t
+#def find_cnter(cl):
+#    t = []
+#    minr = 10 ** 8
+#
+#    for a in cl:
+#        x1, y1 = a[0], a[1]
+#        sumr = 0
+#        for b in cl:
+#            x2, y2 = b[0], b[1]
+#            sumr += ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+#        if minr > sumr:
+#            minr = sumr
+#            t = a
+#    return t
 
 #cl1, cl2 = [], []
 #for s in open("27_A.txt"):
@@ -817,28 +817,141 @@ def find_cnter(cl):
 #print(int((x1 + x2) / 2 * 100), int((y1 + y2) / 2 * 100))
 
 
-cl1, cl2, cl3 = [], [], []
-for s in open("27_B.txt"):
+#cl1, cl2, cl3 = [], [], []
+#for s in open("27_B.txt"):
+#
+#    xs, ys = s.split()
+#    x, y = float(xs), float(ys)
+#
+#    if (y < x and y < (-x + 8)):
+#        cl1.append([x, y])
+#    elif y > x and x < 4:
+#        cl2.append([x, y])
+#    else:
+#        cl3.append([x, y])
+#
+#center1 = find_cnter(cl1)
+#center2 = find_cnter(cl2)
+#center3 = find_cnter(cl3)
+#
+#x1, y1 = center1[0], center1[1]
+#x2, y2 = center2[0], center2[1]
+#x3, y3 = center3[0], center3[1]
+#
+#print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
 
-    xs, ys = s.split()
-    x, y = float(xs), float(ys)
-
-    if (y < x and y < (-x + 8)):
-        cl1.append([x, y])
-    elif y > x and x < 4:
-        cl2.append([x, y])
-    else:
-        cl3.append([x, y])
-
-center1 = find_cnter(cl1)
-center2 = find_cnter(cl2)
-center3 = find_cnter(cl3)
-
-x1, y1 = center1[0], center1[1]
-x2, y2 = center2[0], center2[1]
-x3, y3 = center3[0], center3[1]
-
-print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
 
 
+#for x in range(0, 2):
+#   for y in range(0, 2):
+#       for z in range(0, 2):
+#           for w in range(0, 2):
+#               if (((x <= w) <= y) or (not(z))) == 0:
+#                   print(z, x, w, y)
 
+
+#def Build(n):
+#    x = bin(n)[2:]
+#    if n % 5 == 0:
+#        x = x[:3] + x
+#    else:
+#        x = bin(n % 5)[2:] + x
+#    return int(x, 2)
+#
+#for n in range(1, 10000):
+#    r = Build(n)
+#    if r < 98:
+#        print(n)
+
+
+#def CountNumbers(s):
+#    count = 0
+#    for c in s:
+#        if c not in 'ABCDEF':
+#            n = int(c)
+#            if n <= 8:
+#                count += 1
+#    return count
+#
+#
+#count = 0
+#for s in product('0123456789ABCDEF', repeat=5):
+#    s = ''.join(s)
+#    if s.count('5') <= 1 and CountNumbers(s) == 3:
+#        count += 1
+#print(count)
+
+
+
+#file = open("File1.txt")
+#
+#c = 0
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    n3 = [x for x in nums if nums.count(x) == 3]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    if len(n3) == 3 and len(n1) == 3:
+#        if (2 * n3[0]**2) < (n1[0]**2 + n1[1]**2 + n1[2]**2):
+#            c += 1
+#print(c)
+
+
+#count = 0
+#a = 216**1335 - 4*36**1602 + 5*36**1610 - 3*6**1333 - 253
+#s = ToSystem(a, 6)
+#for c in s:
+#    n = int(c)
+#    if n > 3:
+#        count += 1
+#
+#print(count)
+
+
+#def Del(n, m):
+#    return n % m == 0
+#
+#
+#for a in range(1, 500):
+#    f = []
+#    for x in range(0, 500):
+#        f.append((not(Del(x, 3))) or ((130 <= x <= 180) <= (not(Del(x, a)))))
+#    if all(f):
+#        print(a)
+
+#file = open('17.txt')
+#nums = [int(s) for s in file]
+#maxn = max([x for x in nums if x < 0 and x % 7 == 0])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(0, len(nums) - 2) if nums[i] != nums[i+1] != nums[i+2] and (min([nums[i], nums[i+1], nums[i+2]]) + max(([nums[i], nums[i+1], nums[i+2]])) > maxn)]
+#print(len(t), min([abs(x) for x in t]))
+
+
+#def Build(x, k):
+#    if x <= 35: return k % 2 == 0
+#    if k == 0: return 0
+#
+#    h = [Build(x-2, k-1), Build(x-1, k-1), Build(x//3, k-1)]
+#    return sum(h) if k % 2 != 0 else any(h)
+#
+#print('19', [x for x in range(36, 401) if Build(x, 2)])
+#print('20', [x for x in range(36, 401) if Build(x, 3) and not Build(x, 1)])
+#print('21', [x for x in range(36, 401) if Build(x, 4) and not Build(x, 2)])
+
+
+#def Build(a, b):
+#    if a == b: return 1
+#    if a == 16: return 0
+#    if a > b: return 0
+#
+#    h = [Build(a + 2, b), Build(a + 5, b)]
+#    return sum(h)
+#
+#print(Build(8, 28) * Build(28, 84))
+
+s = open('24.txt').read()
+
+string = s[0]
+countZX = 0
+for i in range(0, len(s) - 1):
+    if s[i] == 'Z' and s[i+1] == 'X':
+        countZX += 1
+    string += s[i+1]
