@@ -817,28 +817,120 @@ def find_cnter(cl):
 #print(int((x1 + x2) / 2 * 100), int((y1 + y2) / 2 * 100))
 
 
-cl1, cl2, cl3 = [], [], []
-for s in open("27_B.txt"):
+#cl1, cl2, cl3 = [], [], []
+#for s in open("27_B.txt"):
+#
+#    xs, ys = s.split()
+#    x, y = float(xs), float(ys)
+#
+#    if (y < x and y < (-x + 8)):
+#        cl1.append([x, y])
+#    elif y > x and x < 4:
+#        cl2.append([x, y])
+#    else:
+#        cl3.append([x, y])
+#
+#center1 = find_cnter(cl1)
+#center2 = find_cnter(cl2)
+#center3 = find_cnter(cl3)
+#
+#x1, y1 = center1[0], center1[1]
+#x2, y2 = center2[0], center2[1]
+#x3, y3 = center3[0], center3[1]
+#
+#print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
+
+
+#1
+
+cl1, cl2 = [], []
+for s in open("27A.txt"):
+    xs, ys = s.split()
+    x, y = float(xs), float(ys)
+    if (x < 1):
+        cl1.append([x, y])
+    else:
+        cl2.append([x, y])
+
+center1 = find_cnter(cl1)
+center2 = find_cnter(cl2)
+
+x1, y1 = center1[0], center1[1]
+x2, y2 = center2[0], center2[1]
+
+print(int((x1 + x2) * 1000), int((y1 + y2) * 1000))
+
+
+cl1, cl2, cl3, cl4, cl5 = [], [], [], [], []
+for s in open("27B.txt"):
 
     xs, ys = s.split()
     x, y = float(xs), float(ys)
 
-    if (y < x and y < (-x + 8)):
+    if x < 8 and y < 5:
         cl1.append([x, y])
-    elif y > x and x < 4:
+    elif y > 5 and y < 9:
         cl2.append([x, y])
-    else:
+    elif y > 9 and y < 13:
         cl3.append([x, y])
+    elif y > 13:
+        cl4.append([x, y])
+    else:
+        cl5.append([x, y])
 
 center1 = find_cnter(cl1)
 center2 = find_cnter(cl2)
 center3 = find_cnter(cl3)
+center4 = find_cnter(cl4)
+center5 = find_cnter(cl5)
 
 x1, y1 = center1[0], center1[1]
 x2, y2 = center2[0], center2[1]
 x3, y3 = center3[0], center3[1]
+x4, y4 = center4[0], center4[1]
+x5, y5 = center5[0], center5[1]
 
-print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
+print(int((x1 + x2 + x3 + x4 + x5) * 1000), int((y1 + y2 + y3 + y4 +y5) * 1000))
 
 
+#4
+#def FindDels(n):
+#    t = set()
+#    for i in range(1, int(n ** 0.5) + 1):
+#        if n % i == 0:
+#            t.add(i)
+#            t.add(n // i)
+#    a = list(t)
+#    a.sort()
+#    return a
+#
+#def FindSimple(t):
+#    l = []
+#    for n in t:
+#        if len(FindDels(n)) == 2:
+#            l.append(n)
+#    return l
+#
+#for n in range(6_086_055, 12_000_000):
+#    dels = FindDels(n)
+#    simDels = FindSimple(dels)
+#    if 1 <= len(simDels) <= 2:
+#        b = max(simDels)
+#        if str(b).count('6') == 1 and str(n // b).count('6') == 1:
+#            print(n, b, simDels)
 
+
+#3
+#def simple(n, d=2):
+#    s = []
+#    for i in range(d, int(n**0.5) + 1):
+#        if n % i == 0:
+#            return [i] + simple(n // i, i)
+#    return [n]
+#
+#for n in range(485_617, 529_678):
+#    simDels = simple(n, 3)
+#    if len(simDels) == 3:
+#        if str(simDels[0])[-1] == str(simDels[1])[-1] == str(simDels[2])[-1] and simDels[0] != simDels[1] != simDels[2]:
+#            if simDels[2] - simDels[0] < 100:
+#                print(n, simDels[2] - simDels[0])
