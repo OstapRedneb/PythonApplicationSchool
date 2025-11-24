@@ -839,3 +839,6 @@ x2, y2 = center2[0], center2[1]
 x3, y3 = center3[0], center3[1]
 
 print(int((x1 + x2 + x3) / 3 * 100), int((y1 + y2 + y3) / 3 * 100))
+
+
+
