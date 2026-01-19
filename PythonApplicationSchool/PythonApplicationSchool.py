@@ -1,6 +1,7 @@
 from turtle import*
 from itertools import*
 from ipaddress import*
+from sys import*
 
 ##������� 2
 #for x in range(0, 2):
@@ -238,3 +239,191 @@ from ipaddress import*
 
 
 
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if (x <= (y and w)) and z:
+#                    print(x, y, z, w)
+#
+#
+#def ConvertToZ(n):
+#    n = str(n)  #Ну хоть какие-то плюсы динамической типизации
+#    s = sum(map(int, n))
+#    m = min(map(int, n)) + max(map(int, n))
+#    l = list(map(int, n))[0]
+#    r = list(map(int, n))[-1]
+#    p1 = s - l
+#    p2 = m - r
+#    preZ = sorted([p1, p2])
+#    z = preZ[1] + preZ[0]
+#    return z
+#
+#answer = 0
+#for n in range(10000, 100000):
+#    z = ConvertToZ(n)
+#    if z == 222:
+#        answer = n
+#print(answer)
+#
+#
+#k = 20
+#screensize(1000, 1000)
+#tracer(0)
+#speed(2000)
+#
+#for i in range(101):
+#    forward(10*k)
+#    left(90)
+#    forward(4*k)
+#up()
+#forward(5*k)
+#right(90)
+#for i in range(201):
+#    back(12*k)
+#    right(90)
+#for i in range(301):
+#    forward(11*k)
+#    left(90)
+#    forward(4*k)
+#
+#for x in range(-50, 50):
+#    for y in range(-50, 50):
+#        goto(x*k, y*k)
+#        dot()
+#done()
+
+
+#print((2560*1440*20*10 - 1920*1080*15*10) / 8 / 1024)
+
+#k = 0
+#i = 0
+#for s in product('агдейсэ', repeat=6):
+#    i += 1
+#    s = ''.join(s)
+#    if 'егэ' in s:
+#        k += i
+#print(k)
+
+#def inc(l):
+#    k = 1
+#    for x in l:
+#        k *= x
+#    return k
+#
+#ls = []
+#file = open('File1.txt')
+#for s in file:
+#    nums = [int(x) for x in s.split()] #да я Linq зависимвй
+#    n3 = [x for x in nums if nums.count(x) == 3]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    if len(n3) == 3 and len(n1) == 4:
+#        if sum(n1) <= 3 * n3[0]:
+#            ls.append(nums)
+#
+#
+#nummax = -100000
+#for nums in ls:
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    if inc(n1) > nummax:
+#        nummax = sum(nums)
+#
+#print(nummax)
+
+
+#У меня проблема с 10, т.к. официальной лицензии нет, а на сайтах функционала поиска нет
+
+#print(bin(32786)[2:])
+#print(287 * 2 + 1 + 13)
+
+#def HasEqualySum(ip):
+#    s = ip.split('.')
+#    if int(s[0]) == int(s[1]) + int(s[2]) + int(s[3]):
+#        return True
+#    if int(s[1]) == int(s[0]) + int(s[2]) + int(s[3]):
+#        return True
+#    if int(s[2]) == int(s[1]) + int(s[0]) + int(s[3]):
+#        return True
+#    if int(s[3]) == int(s[1]) + int(s[2]) + int(s[0]):
+#        return True
+#    return False
+#
+#ips = ip_network('46.29.170.214/255.255.128.0', 0)
+#i = 0
+#for ip in ips:
+#    i += 1
+#    if i != 32 and HasEqualySum(str(ip)):
+#        print(ip)
+
+#for sys in range(11, 33):
+#    for x in range(1, 500_000):
+#        if int('29A1', sys) + int('47771', sys) == 1_000_000 + x:
+#            print(sys)
+
+#print(125 - 32)
+
+
+#setrecursionlimit(10**9)
+#
+#def f(n):
+#    if n <= 10:
+#        return n + 1_000_000
+#    return 6 * f(n - 5) - 4 * f(n - 6) - f(n - 10)
+#
+#print(f(31) - f(30))
+
+
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17.txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+#def DoGame(x, k):
+#    if k == 0: return 0
+#    if x <= 32: return k % 2 == 0
+#
+#    h = [DoGame(x - 2, k - 1), DoGame(x - 3, k - 1), DoGame(x // 4, k - 1)]
+#    return sum(h) if k % 2 != 0 else all(h)
+#
+#print('19', [x for x in range(33, 200) if DoGame(x, 2)])
+#print('20', [x for x in range(33, 200) if DoGame(x, 3) and not DoGame(x, 1)])
+#print('21', [x for x in range(33, 200) if DoGame(x, 4) and not DoGame(x, 2)])
+
+
+
+#def GiveAnswer(a):
+#    if a == 2: return 1
+#    if a < 2: return 0
+#    if a == 999: return 0
+#    if a ==1014: return 0
+#
+#    h = [GiveAnswer(a - 25), GiveAnswer(a - 10), GiveAnswer(a // 9)]
+#    return sum(h)
+#
+#print(GiveAnswer(1024))
+
+
+
+
+#def GetDels(n):
+#    result = [1]
+#    i = 2
+#    while i*i <= n:
+#        if n % i == 0:
+#            n //= i
+#            result.append(i)
+#        else:
+#            i += 1
+#    if n > 1:
+#        result.append(n)
+#    return result
+#
+#
+#
+#s = open('24.txt').read()
+#print('Не знаю что делать')
