@@ -1,6 +1,7 @@
 from turtle import*
 from itertools import*
 from ipaddress import*
+from sys import*
 
 ##������� 2
 #for x in range(0, 2):
@@ -362,3 +363,67 @@ from ipaddress import*
 #print(125 - 32)
 
 
+#setrecursionlimit(10**9)
+#
+#def f(n):
+#    if n <= 10:
+#        return n + 1_000_000
+#    return 6 * f(n - 5) - 4 * f(n - 6) - f(n - 10)
+#
+#print(f(31) - f(30))
+
+
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17.txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+#def DoGame(x, k):
+#    if k == 0: return 0
+#    if x <= 32: return k % 2 == 0
+#
+#    h = [DoGame(x - 2, k - 1), DoGame(x - 3, k - 1), DoGame(x // 4, k - 1)]
+#    return sum(h) if k % 2 != 0 else all(h)
+#
+#print('19', [x for x in range(33, 200) if DoGame(x, 2)])
+#print('20', [x for x in range(33, 200) if DoGame(x, 3) and not DoGame(x, 1)])
+#print('21', [x for x in range(33, 200) if DoGame(x, 4) and not DoGame(x, 2)])
+
+
+
+#def GiveAnswer(a):
+#    if a == 2: return 1
+#    if a < 2: return 0
+#    if a == 999: return 0
+#    if a ==1014: return 0
+#
+#    h = [GiveAnswer(a - 25), GiveAnswer(a - 10), GiveAnswer(a // 9)]
+#    return sum(h)
+#
+#print(GiveAnswer(1024))
+
+
+
+
+#def GetDels(n):
+#    result = [1]
+#    i = 2
+#    while i*i <= n:
+#        if n % i == 0:
+#            n //= i
+#            result.append(i)
+#        else:
+#            i += 1
+#    if n > 1:
+#        result.append(n)
+#    return result
+#
+#
+#
+#s = open('24.txt').read()
+#print('Не знаю что делать')
