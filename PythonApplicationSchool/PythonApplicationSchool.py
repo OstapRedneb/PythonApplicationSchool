@@ -238,3 +238,67 @@ from ipaddress import*
 
 
 
+#text = open('26_1.txt').read()
+#strings = text.split()
+#memory = int(strings[0].split()[0])
+#datas = [int(x) for x in strings[1:]]
+#datas.sort()
+#sumMemory = 0
+#l = []
+#for i in range(len(datas)):
+#    if sumMemory + datas[i] > memory:
+#        break
+#    l.append(datas[i])
+#    sumMemory += datas[i]
+#print(len(l))
+#sumMemory -= l[-1]
+#for j in range(len(l), len(datas)):
+#    if sumMemory + datas[j] <= memory:
+#        print(datas[j])
+
+#text = open('26_2.txt').read()
+#strings = text.split()
+#datas = [int(x) for x in strings[1:]]
+#datas.sort()
+#aver = sum(datas) / len(datas)
+#med = datas[len(datas) // 2]
+#k = 0
+#print(aver, med)
+#for num in datas:
+#    if aver <= num <= med:
+#        k += 1
+#print(k)
+
+
+#text = open('26_2.txt').read()
+#strings = text.split()
+#datas = [int(x) for x in strings[1:]]
+#datas.sort()
+#
+#ind = 0
+#
+#for mon in datas:
+#    if mon <= 50:
+#        ind += 1
+
+
+#text = open('26_3.txt').read()
+#strings = text.split()
+#N = int(strings[0])
+#datas = [int(x) for x in strings[1:]]
+#counts = [0] * 100
+#for k in datas:
+#    if 0 <= k < 100:
+#        counts[k] += 1
+#
+#result = 0
+#result += counts[50] // 2
+#counts[50] %= 2
+#
+#for i in range(1, 50):
+#    pairs = min(counts[i], counts[100 - i])
+#    result += pairs
+#    counts[i] -= pairs
+#    counts[100 - i] -= pairs
+#
+#print(result)
