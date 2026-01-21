@@ -238,3 +238,160 @@ from ipaddress import*
 
 
 
+#for m in range(32):
+#    n = ip_network(f'215.181.200.27/{m}', 0)
+#    print(n, n.netmask)
+
+
+#n = ip_network(f'112.208.0.0/255.255.128.0', 0)
+#print(n, n.netmask)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('1') % 11 == 0:
+#        k += 1
+#print(k)
+
+
+#for m in range(32):
+#    n = ip_network(f'20.24.110.42/{m}', 0)
+#    print(n, n.netmask)
+
+
+#n = ip_network(f'172.16.160.0/255.255.240.0', 0)
+#print(n, n.netmask)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('1') % 3 != 0:
+#        k += 1
+#print(k)
+
+
+#for m in range(32):
+#    n1 = ip_network(f'118.187.59.255/{m}', 0)
+#    n2 = ip_network(f'118.187.65.115/{m}', 0)
+#    if n1 != n2:
+#        print(m)
+#        print(1, n1[0], n1[-1])
+#        print(1, n2[0], n2[-1])
+#        print('---------------------------')
+
+
+#n = ip_network(f'195.102.65.64/255.255.255.192', 0)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b[-8:].count('1') == b[-8:].count('0'):
+#        k += 1
+#print(k)
+
+
+
+
+
+
+#for m in range(32):
+#    n = ip_network(f'215.181.200.27/{m}', 0)
+#    print(n, n.netmask)
+
+
+
+#n = ip_network(f'98.81.154.195/255.252.0.0', 0)
+#
+#k = 0
+#for ip in n:
+#    print(ip)
+
+
+#n = ip_network(f'235.86.56.0/255.255.248.0', 0)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b[-2:] == '11':
+#        k += 1
+#print(k)
+
+
+
+#n = ip_network(f'122.159.136.144/255.255.255.248', 0)
+#print(n, n.netmask)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('1') % 4 != 0:
+#        k += 1
+#print(k)
+
+
+
+#n = ip_network(f'123.222.111.192/255.255.255.248', 0)
+#print(n, n.netmask)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b[-8:].count('1') % 3 != 0:
+#        k += 1
+#print(k)
+
+
+
+#n = ip_network(f'87.226.26.72/255.255.255.252', 0)
+#print(n, n.netmask)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('0') % 2 == 0:
+#        k += 1
+#print(k)
+
+
+
+#for m in range(32):
+#    n1 = ip_network(f'61.58.73.42/{m}', 0)
+#    n2 = ip_network(f'61.58.75.136/{m}', 0)
+#    if n1 == n2:
+#        print(m)
+#        print(1, n1[0], n1[-1])
+#        print(1, n2[0], n2[-1])
+#        print('---------------------------')
+
+
+#for m in range(32):
+#    n1 = ip_network(f'151.172.115.121/{m}', 0)
+#    n2 = ip_network(f'151.172.115.156/{m}', 0)
+#    if n1 != n2:
+#        print(m)
+#        print(1, n1[0], n1[-1])
+#        print(1, n2[0], n2[-1])
+#        print('---------------------------')
+
+
+#n = ip_network(f'192.168.160.0/255.255.224.0', 0)
+#
+#k = 0
+#for ip in n.hosts():
+#    b = f'{ip:b}'
+#    if b.count('1') == 19:
+#        k += 1
+#print(k)
+
+
+
+n = ip_network(f'192.168.76.160/255.255.255.240', 0)
+
+k = 0
+i = 0
+for ip in n.hosts():
+    i += 1
+    b = f'{ip:b}'
+    if b[-8:].count('1') % 2 == 0 and i % 2 == 0:
+        k += 1
+print(k)
