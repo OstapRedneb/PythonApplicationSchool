@@ -385,13 +385,55 @@ from ipaddress import*
 
 
 
-n = ip_network(f'192.168.76.160/255.255.255.240', 0)
+#n = ip_network(f'192.168.76.160/255.255.255.240', 0)
+#
+#k = 0
+#i = 0
+#for ip in n.hosts():
+#    i += 1
+#    b = f'{ip:b}'
+#    if b[-8:].count('1') % 2 == 0 and i % 2 == 0:
+#        k += 1
+#print(k)
 
-k = 0
-i = 0
-for ip in n.hosts():
-    i += 1
-    b = f'{ip:b}'
-    if b[-8:].count('1') % 2 == 0 and i % 2 == 0:
-        k += 1
-print(k)
+
+def SumOct(s):
+    nums = [int(x) for x in s.split('.')]
+    return sum(nums)
+
+#n = ip_network(f'172.95.116.174/255.255.192.0', 0)
+#print(n[0])
+#k = 0
+#for ip in n.hosts():
+#    print(SumOct(str(ip)))
+#    break
+
+
+#k = 0
+#for m in range(32):
+#    n = ip_network(f'192.214.116.184/{m}', 0)
+#    b = f'{n[0]:b}'
+#    if b.count('1') % 5 == 0 and b.count('1') > 0:
+#        if '192.214.116.184' not in str(n[0]):
+#            k += 1
+#print(k)
+
+
+#i = ""
+#n = ip_network(f'192.168.12.207/255.192.0.0', 0)
+# 
+#for ip in list(n.hosts())[::-1]:
+#    b = f'{ip:b}'
+#    if b.count('0') == b.count('1'):
+#       print(ip)
+#       break
+
+
+#i = ""
+#n = ip_network(f'111.222.0.124/255.255.224.0', 0)
+# 
+#for ip in list(n.hosts())[::-1]:
+#    b = f'{ip:b}'
+#    if b.count('0') * b.count('1') % 2 != 0:
+#       print(SumOct(str(ip)))
+#       break
