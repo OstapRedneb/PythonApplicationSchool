@@ -437,3 +437,58 @@ def SumOct(s):
 #    if b.count('0') * b.count('1') % 2 != 0:
 #       print(SumOct(str(ip)))
 #       break
+
+#def get_norm_num(n):
+#    a = n // 2
+#    if n % 2 == 0:
+#        return a
+#    return a + 1
+#
+#def get_datas(rightDatas):
+#    t1 = []
+#    t2 = []
+#
+#    for i in range(len(rightDatas)):
+#        if i % 2 == 0:
+#            t1.append(get_norm_num(rightDatas[i]))
+#            t2.append(rightDatas[i])
+#        else:
+#            t2.append(get_norm_num(rightDatas[i]))
+#            t1.append(rightDatas[i])
+#
+#    if sum(t2) > sum(t1):
+#        print('1 3 5')
+#        return t2
+#    print('0 2 4')
+#    return t1
+#
+#strings = open('26_1.txt').read()
+#datas = [int(x) for x in strings.split()[1:]]
+#
+#sDatas = [x for x in datas if x > 200]
+#oDatas = [x for x in  datas if x <= 200]
+#
+#rightDatas = get_datas(sDatas)
+#maxn = max([rightDatas[i] for i in range(len(rightDatas)) if i % 2 != 0])
+#print(sum(rightDatas + oDatas), maxn)
+
+
+
+#for m in range(32):
+#    n1 = ip_network(f'118.187.59.255/{m}', 0)
+#    n2 = ip_network(f'118.187.65.115/{m}', 0)
+#    if n1 != n2:
+#        print(m)
+#        print(1, n1[0], n1[-1])
+#        print(1, n2[0], n2[-1])
+#        print('---------------------------')
+
+
+#n = ip_network(f'195.102.65.64/255.255.255.192', 0)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b[-8:].count('1') == b[-8:].count('0'):
+#        k += 1
+#print(k)
