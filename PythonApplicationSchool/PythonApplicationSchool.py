@@ -437,3 +437,74 @@ def SumOct(s):
 #    if b.count('0') * b.count('1') % 2 != 0:
 #       print(SumOct(str(ip)))
 #       break
+
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if not((not(y <= z)) or (w == z) or w):
+#                    print(x, y, z, w)
+
+#def ToSystem(number, system):
+#    s = ''
+#    while number != 0:
+#        s = str(number % system) + s
+#        number //= system
+#    return s
+#
+#def Build(n):
+#    x = ToSystem(n, 5)
+#    if sum(map(int, x)) % 2 == 0:
+#        x += '222'
+#    else:
+#        x = '33' + x + '4'
+#    return int(x, 5)
+#
+#for n in range(1, 1000):
+#    r = Build(n)
+#    if r < 9616:
+#        print(n)
+
+#v = 2 ** 27
+#t = 318*60*60 + 45*60
+#I = 2 * 48000 * 34 * 180
+#print(v * t / I)
+
+#def count_norm(n, k):
+#    countk = 0
+#    s = str(n)
+#    for c in s:
+#        if int(c) % 2 == 0:
+#            countk += 1
+#    return countk == k
+#
+#
+#k = 0
+#sumk = 0
+#for n in range(100000, 1000000):
+#    if count_norm(n, 4):
+#        sumk += 1
+#if 100000 <= sumk < 1000000:
+#    k += 1
+#print(k)
+
+#def choose_flag(nums):
+#    if nums[0] == nums[1]:
+#        return nums[2] % 7 == 0
+#    if nums[2] == nums[3]:
+#        return nums[1] % 7 == 0
+#    if nums[1] == nums[2]:
+#        return nums[1] % 7 == 0
+#
+#k = 0
+#file = open('File1.txt')
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    nums.sort()
+#    n2 = [x for x in nums if nums.count(x) == 2]
+#    if len(n2) == 2 and choose_flag(nums):
+#        k += 1
+#print(k)
+
+print((32 + 213 + 15*7*1024) * 20000 / 1024**2)
