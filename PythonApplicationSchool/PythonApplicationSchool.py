@@ -259,6 +259,7 @@ from ipaddress import*
 #    print(n, n.netmask)
 
 
+<<<<<<< Updated upstream
 #n = ip_network(f'172.16.160.0/255.255.240.0', 0)
 #print(n, n.netmask)
 #
@@ -437,3 +438,189 @@ def SumOct(s):
 #    if b.count('0') * b.count('1') % 2 != 0:
 #       print(SumOct(str(ip)))
 #       break
+
+#def get_norm_num(n):
+#    a = n // 2
+#    if n % 2 == 0:
+#        return a
+#    return a + 1
+#
+#def get_datas(rightDatas):
+#    t1 = []
+#    t2 = []
+#
+#    for i in range(len(rightDatas)):
+#        if i % 2 == 0:
+#            t1.append(get_norm_num(rightDatas[i]))
+#            t2.append(rightDatas[i])
+#        else:
+#            t2.append(get_norm_num(rightDatas[i]))
+#            t1.append(rightDatas[i])
+#
+#    if sum(t2) > sum(t1):
+#        print('1 3 5')
+#        return t2
+#    print('0 2 4')
+#    return t1
+#
+#strings = open('26_1.txt').read()
+#datas = [int(x) for x in strings.split()[1:]]
+#
+#sDatas = [x for x in datas if x > 200]
+#oDatas = [x for x in  datas if x <= 200]
+#
+#rightDatas = get_datas(sDatas)
+#maxn = max([rightDatas[i] for i in range(len(rightDatas)) if i % 2 != 0])
+#print(sum(rightDatas + oDatas), maxn)
+
+
+
+#for m in range(32):
+#    n1 = ip_network(f'118.187.59.255/{m}', 0)
+#    n2 = ip_network(f'118.187.65.115/{m}', 0)
+#    if n1 != n2:
+#        print(m)
+#        print(1, n1[0], n1[-1])
+#        print(1, n2[0], n2[-1])
+#        print('---------------------------')
+
+
+#n = ip_network(f'195.102.65.64/255.255.255.192', 0)
+#
+#k = 0
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b[-8:].count('1') == b[-8:].count('0'):
+#        k += 1
+#print(k)
+
+
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((not(x)) <= (not(y))) and z and not(w == z):
+#                    print(f'{w} {z} {y} {x}')
+
+#def Bild(n):
+#    n -= n % 2
+#    x = bin(n)[2:]
+#    if x.count('0') % 2 == 0:
+#        x += '1'
+#        x = '10' + x[2:]
+#    else:
+#        x += '0'
+#        x = '11' + x[2:]
+#    return int(x, 2)
+#
+#for n in range(1, 10000):
+#    r = Bild(n)
+#    if r > 50:
+#        print(n)
+#        break
+
+
+#file = open("File1.txt")
+#k = 0
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    nums.sort()
+#    if nums[-1] <= (nums[0] + nums[1] + nums[2]) / 3 or str(nums[0])[-1] == str(nums[1])[-1] == str(nums[2])[-1] == str(nums[3])[-1]:
+#        k += 1
+#print(k)
+
+
+#def Bild(s):
+#    while '98' in s or '888' in s or '7788' in s:
+#        if '98' in s:
+#            s = s.replace('98', '7', 1)
+#        if '888' in s:
+#            s = s.replace('888', '78', 1)
+#        if '7788' in s:
+#            s = s.replace('7788', '897', 1)
+#    return s
+#
+#k = 0
+#for n in range(4, 1000):
+#    x = '9' + n * '8'
+#    s = Bild(x)
+#    if sum(map(int, s)) <= 399:
+#        k += 1
+#print(k)
+
+
+#k = 0
+#n = ip_network('108.35.239.240/255.255.255.248', 0)
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('0') % 3 == 0:
+#        k += 1
+#print(k)
+
+#c = 12
+#nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C']
+#
+#for x in nums:
+#    k = 0
+#    for y in nums:
+#        p = int(f'CC68{x}{y}', 13) + int(f'2{y}343{x}7', 13)
+#        if p % 7 == 0:
+#            k += 1
+#    if k == 13:
+#        print(x)
+#        break
+#print ((int(f'CC6833', 13) + int(f'2334337', 13)) / 7)
+
+#def Del(n, m):
+#    return n % m == 0
+#
+#list = []
+#for a in range(1, 1500):
+#    k = 0
+#    for x in range(1, 1500):
+#        if (Del(x, 20) <= (not(Del(x, 11)))) or (a < 3*x + 600):
+#            k += 1
+#    if k == 1499:
+#        list.append(a)
+#print(list[-1])
+
+
+#nums = [int(x) for x in open("17.txt")]
+#minn = min(nums)
+#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 111 == minn or nums[i + 1] % 111 == minn]
+#print(len(t), min(t))
+
+
+#nums = [int(x) for x in open("17.txt")]
+#minn = min(nums)
+#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 16 == minn or nums[i + 1] % 16 == minn]
+#print(len(t), max(t))
+
+
+#def Del(x, y):
+#    while x != 0 and y != 0:
+#        if x > y:
+#            x %= y
+#        else:
+#            y %= x
+#    return x + y
+#
+#nums = [int(x) for x in open("17.txt")]
+#minn = min(nums)
+#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] % 2 == 0 and nums[i + 1] % 2 == 0 and Del(nums[i], nums[i + 1]) > 100]
+#print(len(t), max(t))
+
+
+#nums = [int(x) for x in open("17.txt")]
+#maxn = max([x for x in nums if x % 118 == 0 and abs(x) % 10 != 8])
+#t = [(nums[i] + nums[i + 1] + nums[i + 2])**2 for i in range(len(nums) - 2) if (nums[i] + nums[i + 1] + nums[i + 2]) > maxn and (nums[i] % 118 == 0 or nums[i + 1] % 118 == 0 or nums[i+2] % 118 == 0) and (abs(nums[i]) % 1000 == 118 or abs(nums[i+1]) % 1000 == 118 or abs(nums[i+2]) % 1000 == 118)]
+#print(len(t), max(t))
+
+
+#nums = [int(x) for x in open("17.txt")]
+#minn = min([x for x in nums if abs(x) % 100 == 31])
+#sumabs = abs(min([x for x in nums if abs(x) % 100 == 31]) + max([x for x in nums if abs(x) % 100 == 31]))
+#print(sumabs)
+#t = [nums[i] + nums[i + 1] for i in range(len(nums) - 1) if nums[i] > sumabs and nums[i+1] > sumabs]
+#print(len(t), max(t))
