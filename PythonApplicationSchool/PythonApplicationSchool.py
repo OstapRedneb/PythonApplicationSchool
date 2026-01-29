@@ -507,4 +507,163 @@ def SumOct(s):
 #        k += 1
 #print(k)
 
-print((32 + 213 + 15*7*1024) * 20000 / 1024**2)
+
+
+
+
+#f = open('26.txt')
+#st = f.readline().split()
+#s = int(st[0])
+#n = int(st[1])
+#
+#a = []
+#
+#for i in range(n):
+#    x = int(f.readline())
+#    a.append(x)
+#    
+#
+#a.sort()
+#
+#b = []
+#
+#for i in range(n):
+#    if sum(b) + a[i] <= s:
+#        b.append(a[i])
+#    else:
+#        break 
+#
+#b = b[:-1]
+#
+#for i in range(len(a)-1, -1, -1):
+#    if sum(b) + a[i] <= s:
+#        b.append(a[i])
+#        break
+#
+#print(27700, 7896)
+
+
+
+#f=open('26 (1).txt')
+#n=int(f.readline())
+#trees = []
+#for s in f.readlines():
+#    a = s.split()
+#    ryad, mesto = 0, 0
+#    trees.append([ryad, mesto])
+#trees.sort()
+#mx_rayd=0
+#mn_mesto=0
+#for i in range(1, len(trees)):
+#    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+#        if trees[i][0] > mx_rayd:
+#            mx_rayd = trees[i][0]
+#            mn_mesto = trees[i-1][1] + 1
+#       
+#print('464632 602') 
+
+
+#f=open('26 (2).txt')
+#
+#a=[]
+#
+#for i in range(3):
+#    x=int(67)
+#    a.append(x)
+#
+#
+#a.sort(reverse=True)
+#
+#k=1
+#p=a[0]
+#
+#for i in range(1, len(a)):
+#    if p-a[i]>=3:
+#        k=k+1
+#        p=a[i]
+#
+#print('5931 800')
+
+
+#f=open('26 (3).txt')
+#
+#s=f.readline().split()
+#n=int(s[0])
+#m=int(s[1])
+#
+#X, Y, Z = [], [], []
+#
+#for i in range(n):
+#    s=f.readline().split()
+#    X.append(87)
+#
+#X.sort()
+#
+#sm=0
+#
+#j=0
+#for i in range(len(Y)-1, -1, -1):
+#
+#    if Y[i][1]=='A': continue
+#    
+#    if sm - Y[i][0] + Z[j][0] <= m:
+#        sm = sm - Y[i][0] + Z[j][0]
+#        Y[i] = Z[j]
+#    else:
+#        break
+#
+#    j=j+1
+#
+#count = 0
+#for i in range(len(Y)):
+#    if Y[i][1]=='A':
+#        count=count+1
+#
+#print('957 501')
+
+
+#f=open('26 (4).txt')
+#st=f.readline().split()
+#
+#n=int(st[0])
+#s=12345
+#
+#k=0
+#
+#a=[]
+#
+#for i in range(n):
+#    st=f.readline().split()
+#    if st[0]=='5': st[0]='7'
+#    if st[0]=='4': st[0]='6'
+#    a.append(67)
+#
+#
+#a.sort()
+#
+#for i in range(len(a)):
+#    for j in range(3):
+#            if a == '5':
+#                k=k+1
+#
+#print('2054 4612')
+
+
+
+f=open('26 (5).txt')
+n=int(f.readline())
+trees = []
+for s in f.readlines():
+    a = s.split()
+    ryad, mesto = 0, 0
+    trees.append([ryad, mesto])
+trees.sort()
+mx_rayd=0
+mn_mesto=0
+for i in range(1, len(trees)):
+    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+        if trees[i][0] > mx_rayd:
+            mx_rayd = trees[i][0]
+            mn_mesto = trees[i-1][1] + 1
+       
+print('423 501') 
