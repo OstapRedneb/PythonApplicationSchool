@@ -773,27 +773,31 @@ def SumOct(s):
 #        break
 
 
+
+
 l = []
 
 def Count(number, k=0):
     if number == 42 and len(l) > 0:
         return 1
 
-    
+    if len(l) >= 10:
+        return 0
+
     if number + 3 not in l and 40 <= number + 3 <= 49:
-        k += 1
+        k += Count(number + 3, k)
         l.append(number + 3)
 
     if number + 1 not in l and 40 <= number + 1 <= 49:
-        k += 1
+        k += Count(number + 1, k)
         l.append(number + 1)
 
     if number - 3 not in l and 40 <= number - 3 <= 49:
-        k += 1
+        k += Count(number - 3, k)
         l.append(number - 3)
 
     if number - 1 not in l and 40 <= number - 1 <= 49:
-        k += 1
+        k += Count(number - 1, k)
         l.append(number - 1)
 
     return k
