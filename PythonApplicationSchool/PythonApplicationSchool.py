@@ -1,6 +1,11 @@
+from ast import Num
+from asyncio.windows_events import NULL
+import itertools
 from turtle import*
 from itertools import*
 from ipaddress import*
+from functools import*
+from unittest import skip
 
 ##������� 2
 #for x in range(0, 2):
@@ -650,20 +655,147 @@ def SumOct(s):
 
 
 
-f=open('26 (5).txt')
-n=int(f.readline())
-trees = []
-for s in f.readlines():
-    a = s.split()
-    ryad, mesto = 0, 0
-    trees.append([ryad, mesto])
-trees.sort()
-mx_rayd=0
-mn_mesto=0
-for i in range(1, len(trees)):
-    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
-        if trees[i][0] > mx_rayd:
-            mx_rayd = trees[i][0]
-            mn_mesto = trees[i-1][1] + 1
-       
-print('423 501') 
+#f=open('26 (5).txt')
+#n=int(f.readline())
+#trees = []
+#for s in f.readlines():
+#    a = s.split()
+#    ryad, mesto = 0, 0
+#    trees.append([ryad, mesto])
+#trees.sort()
+#mx_rayd=0
+#mn_mesto=0
+#for i in range(1, len(trees)):
+#    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+#        if trees[i][0] > mx_rayd:
+#            mx_rayd = trees[i][0]
+#            mn_mesto = trees[i-1][1] + 1
+#       
+#print('423 501') 
+
+
+#@lru_cache(None)
+#
+#def Count(a, k=0):
+#
+#    if a > 48: return 0
+#
+#    if a == 24 or a == 32:
+#        k += 1
+#
+#    if a == 48 and k == 1: 
+#        return 1
+#
+#    h = [Count(a + 1, k), Count(a + 2, k), Count(a + 4, k), Count(a + 8, k)]
+#    return sum(h)
+#
+#print(Count(16))
+
+
+#@lru_cache(None)
+#
+#def Count(number, symbols=''):
+#    if number > 36 or 'AAA' in symbols: 
+#        return 0
+#
+#    if number == 34 and 'AAA' not in symbols:
+#        return 1
+#
+#    h = [Count(number - 1, symbols + 'A'), Count(number + 5, symbols + 'B'), Count(number * 2, symbols + 'C')]
+#    return sum(h)
+#
+#print(Count(5))
+
+
+#@lru_cache(None)
+#
+#def Count(number, end):
+#    if number > end or number == 100:
+#        return 0
+#
+#    if number == end:
+#        return 1
+#
+#    k = 0
+#
+#    if number % 10 != 0:
+#        k += Count(number + number % 10, end)
+#
+#    if number % 68 != 0:
+#        k += Count(number + number % 68, end)
+#
+#    return k + Count(number**2, end)
+#
+#print(Count(2, 68) * Count(68, 680))
+
+
+#def Count(number, symbols=''):
+#    if number > 20:
+#        return 0
+#    if number == 20 and (symbols[-1] in 'AC'):
+#        return 1
+#
+#    h = [Count(number + 2, symbols+'A'), Count(number + 3, symbols+'B'), Count(number * 2, symbols+'C')]
+#
+#    return sum(h)
+#
+#print(Count(3))
+
+
+#def Count(number, k = 0):
+#    if number > 40:
+#        return 0
+#
+#    if number == 20 or number == 30:
+#        k += 1
+#
+#    if number == 40 and k == 1:
+#        return 1
+#
+#    h = [Count(number + 3, k), Count(number + 5, k), Count(number * 2, k)]
+#    return sum(h)
+#
+#print(Count(10))
+
+
+#def Count(number, end, d):
+#    if number > end:
+#        return 0
+#    if number == end:
+#        return 1
+#    
+#    h = [Count(number + d, end, d), Count(number * 2, end, d)]
+#    return sum(h)
+#
+#for d in range(1, 1000):
+#    if Count(1, 10, d) * Count(10, 100, d) == 13:
+#        print(d)
+#        break
+
+
+l = []
+
+def Count(number, k=0):
+    if number == 42 and len(l) > 0:
+        return 1
+
+    
+    if number + 3 not in l and 40 <= number + 3 <= 49:
+        k += 1
+        l.append(number + 3)
+
+    if number + 1 not in l and 40 <= number + 1 <= 49:
+        k += 1
+        l.append(number + 1)
+
+    if number - 3 not in l and 40 <= number - 3 <= 49:
+        k += 1
+        l.append(number - 3)
+
+    if number - 1 not in l and 40 <= number - 1 <= 49:
+        k += 1
+        l.append(number - 1)
+
+    return k
+
+print(Count(42))
