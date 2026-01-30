@@ -670,3 +670,107 @@ def SumOct(s):
 
 
 
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17.txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+
+#file = open('17 (1).txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17 (2).txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+
+
+#file = open('17 (3).txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17 (4).txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+
+def dell(n, k=2):
+    for i in range(k, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return [i] + dell(n//i, i)
+    return sorted([n])
+
+# for i in range(2700034, 10**19, 100):
+#     s = dell(i)
+#     for j in range(len(s)):
+#         if s.count(s[j]) >= 5:
+#             print(i, s[j])
+#             break
+
+# for i in range(89427150+1, 10**19):
+#     s = dell(i)
+#     if len(s) == 8:
+#         p, q = [], []
+#         for j in range(len(s)):
+#             if s.count(s[j]) == 2:
+#                 q.append(s[j])
+#             if s.count(s[j]) == 1:
+#                 p.append(s[j])
+#         if len(q) == 4 and len(p) == len(s) - 4:
+#             if s[0] in p:
+#                 print(i, s[-1])
+
+# for i in range(1350050+1, 10**19):
+#     s = dell(i)
+#     for j in range(len(s)):
+#         if s[j] % 100 == 11 and s[j] != 11 and s[j] != i:
+#             print(i, s[j])
+#             break
+
+# import math
+# def f253(n):
+#     for i in range(222, n+1, 222):
+#         a = str(n - i)
+#         for j in '13579':
+#             if j in a:
+#                 break
+#         else:
+#             a = int(a)
+#             b = math.log(a, 5)
+#             if b % 1 == 0:
+#                 print(i, b)
+# for i in range(1000000+1, 10**19):
+#     a = f253(i)
+
+
+for i in range(89428304+1, 10**19):
+    s = dell(i)
+    if len(s) >= 6:
+        a = sum(s)
+        if i % a == 0:
+            print(i, a)
