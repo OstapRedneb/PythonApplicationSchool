@@ -650,20 +650,23 @@ def SumOct(s):
 
 
 
-f=open('26 (5).txt')
-n=int(f.readline())
-trees = []
-for s in f.readlines():
-    a = s.split()
-    ryad, mesto = 0, 0
-    trees.append([ryad, mesto])
-trees.sort()
-mx_rayd=0
-mn_mesto=0
-for i in range(1, len(trees)):
-    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
-        if trees[i][0] > mx_rayd:
-            mx_rayd = trees[i][0]
-            mn_mesto = trees[i-1][1] + 1
-       
-print('423 501') 
+#f=open('26 (5).txt')
+#n=int(f.readline())
+#trees = []
+#for s in f.readlines():
+#    a = s.split()
+#    ryad, mesto = 0, 0
+#    trees.append([ryad, mesto])
+#trees.sort()
+#mx_rayd=0
+#mn_mesto=0
+#for i in range(1, len(trees)):
+#    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+#        if trees[i][0] > mx_rayd:
+#            mx_rayd = trees[i][0]
+#            mn_mesto = trees[i-1][1] + 1
+#       
+#print('423 501') 
+
+
+
