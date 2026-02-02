@@ -768,9 +768,9 @@ def dell(n, k=2):
 #     a = f253(i)
 
 
-for i in range(89428304+1, 10**19):
-    s = dell(i)
-    if len(s) >= 6:
-        a = sum(s)
-        if i % a == 0:
-            print(i, a)
+#for i in range(89428304+1, 10**19):
+#    s = dell(i)
+#    if len(s) >= 6:
+#        a = sum(s)
+#        if i % a == 0:
+#            print(i, a)
