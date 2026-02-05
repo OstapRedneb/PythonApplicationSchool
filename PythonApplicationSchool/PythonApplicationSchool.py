@@ -1,3 +1,5 @@
+from functools import lru_cache
+from sys import setrecursionlimit
 from turtle import*
 from itertools import*
 from ipaddress import*
@@ -949,11 +951,108 @@ def dell(n, k=2):
 
 
 
+#@lru_cache(None)
+#
+#def f(n):
+#    if n <= 10:
+#        return n
+#    return n - 7 + f(n - 21)
+#for n in range(190000): f(n)
+#
+#print((f(185734) - f(185650)) // f(40))
 
+
+#def f(n):
+#    if n < 10:
+#        return n + 10
+#    return f(n - 8) + 2**n
+#
+#print((f(4000) + 2 * f(3992)) / f(3984))
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n < 10:
+#        return n
+#    return 3*n + f(n - 3)
+#for n in range(7000): f(n)
+#
+#
+#print((f(6250) + 2 * f(6244)) // f(6238))
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n > 80000:
+#        return 100
+#    return f(n + 1) * n
+#
+#for n in range(80000, 0, -1): f(n)
+#
+#print((f(50) // 100 + f(53)) // f(55))
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n <= 10:
+#        return n
+#    return n - 7 + f(n - 21)
+#for n in range(190000): f(n)
+#
+#print((f(185734) - f(185650)) // f(40))
+
+
+#def f(n):
+#    if n < 10:
+#        return n + 10
+#    return f(n - 8) + 2**n
+#
+#print((f(4000) + 2 * f(3992)) / f(3984))
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n < 10:
+#        return n
+#    return 3*n + f(n - 3)
+#for n in range(7000): f(n)
+#
+#
+#print((f(6250) + 2 * f(6244)) // f(6238))
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n > 80000:
+#        return 100
+#    return f(n + 1) * n
+#
+#for n in range(80000, 0, -1): f(n)
+#
+#print((f(50) // 100 + f(53)) // f(55))
+
+
+
+
+@lru_cache(None)
+
+
+def g(n):
+    if n < 8:
+        return 3 * n
+    return g(n - 3) + 2
 
 def f(n):
-    if n <= 10:
-        return n
-    return n - 7 + f(n - 21)
+    return 3 * (g(n - 2) + 5)
+for n in range(13000): 
+    g(n)
 
-print((f(185734) + f(185650) / f(40))
+print(f(12345))
