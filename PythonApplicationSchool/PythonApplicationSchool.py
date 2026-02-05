@@ -937,12 +937,23 @@ def dell(n, k=2):
 
 
 
-def GiveAnswer(a):
-    if a == 112: return 1
-    if a > 112: return 0
-    if a == 36: return 0
+#def GiveAnswer(a):
+#    if a == 112: return 1
+#    if a > 112: return 0
+#    if a == 36: return 0
+#
+#    h = [GiveAnswer(a + 2), GiveAnswer(a + 5), GiveAnswer(round(a * 2.5)))]
+#    return sum(h)
+#
+#print(GiveAnswer(5))
 
-    h = [GiveAnswer(a + 2), GiveAnswer(a + 5), GiveAnswer(round(a * 2.5)))]
-    return sum(h)
 
-print(GiveAnswer(5))
+
+
+
+def f(n):
+    if n <= 10:
+        return n
+    return n - 7 + f(n - 21)
+
+print((f(185734) + f(185650) / f(40))
