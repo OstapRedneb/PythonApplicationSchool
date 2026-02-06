@@ -1042,17 +1042,169 @@ def dell(n, k=2):
 
 
 
-@lru_cache(None)
+#@lru_cache(None)
+#
+#
+#def g(n):
+#    if n < 8:
+#        return 3 * n
+#    return g(n - 3) + 2
+#
+#def f(n):
+#    return 3 * (g(n - 2) + 5)
+#for n in range(13000): 
+#    g(n)
+#
+#print(f(12345))
 
 
-def g(n):
-    if n < 8:
-        return 3 * n
-    return g(n - 3) + 2
+#def get_centers(cl1):
+#    centers1 = [10**19, -1, -1]
+#    for point1 in cl1:
+#        x1, y1 = point1[0], point1[1]
+#        clSum = 0
+#        for point2 in cl1:
+#            if point1 != point2:
+#                x2, y2 = point2[0], point2[1]
+#                clSum += ((x1 - x2)**2 + (y1 - y2)**2)**0.5
+#        if clSum < centers1[0]:
+#            centers1 = [clSum, x1, y1]
+#
+#    return centers1[1:]
+#
+#
+#
+#cl1 = []
+#cl2 = []
+#
+#file = open('27A.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y < 15:
+#        cl1.append([x, y])
+#    elif y > 15 and y < 25 and x < 10:
+#        cl2.append([x, y])
+#print(get_centers(cl1))
+#print(get_centers(cl2))
 
-def f(n):
-    return 3 * (g(n - 2) + 5)
-for n in range(13000): 
-    g(n)
 
-print(f(12345))
+
+#cl1 = []
+#cl2 = []
+#cl3 = []
+#
+#file = open('27B.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y > 5 and x > -1 and x < -0.5:
+#        cl1.append([x, y])
+#    elif y < 5 and x < 0 and x > -1:
+#        cl2.append([x, y])
+#    elif y < 5 and x < -1 and x > -2:
+#        cl3.append([x, y])
+#print(min(len(cl1), len(cl2), len(cl3)), max(len(cl1), len(cl2), len(cl3)))
+
+
+
+
+
+#def get_centers(cl1):
+#    centers1 = [10**19, -1, -1]
+#    for point1 in cl1:
+#        x1, y1 = point1[0], point1[1]
+#        clSum = 0
+#        for point2 in cl1:
+#            if point1 != point2:
+#                x2, y2 = point2[0], point2[1]
+#                clSum += ((x1 - x2)**2 + (y1 - y2)**2)**0.5
+#        if clSum < centers1[0]:
+#            centers1 = [clSum, x1, y1]
+#
+#    return centers1[1:]
+#
+#
+#
+#cl1 = []
+#cl2 = []
+#
+#file = open('27A.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y > -10 and x > -5 and x < 0:
+#        cl1.append([x, y])
+#    elif x > 0 and y > 0:
+#        cl2.append([x, y])
+#print(get_centers(cl1))
+#print(get_centers(cl2))
+
+
+
+#cl1 = []
+#cl2 = []
+#cl3 = []
+#
+#file = open('27B.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y > 5 and x > -1 and x < -0.5:
+#        cl1.append([x, y])
+#    elif y < 5 and x < 0 and x > -1:
+#        cl2.append([x, y])
+#    elif y < 5 and x < -1 and x > -2:
+#        cl3.append([x, y])
+#print((get_centers(cl1)[0] + get_centers(cl2)[0] + get_centers(cl3)[0]) / 3, (get_centers(cl1)[1] + get_centers(cl2)[1] + get_centers(cl3)[1]) / 3)
+
+
+
+
+def get_centers(cl1):
+    centers1 = [10**19, -1, -1]
+    for point1 in cl1:
+        x1, y1 = point1[0], point1[1]
+        clSum = 0
+        for point2 in cl1:
+            if point1 != point2:
+                x2, y2 = point2[0], point2[1]
+                clSum += ((x1 - x2)**2 + (y1 - y2)**2)**0.5
+        if clSum < centers1[0]:
+            centers1 = [clSum, x1, y1]
+
+    return centers1[1:]
+
+
+
+#cl1 = []
+#cl2 = []
+#
+#file = open('27A.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y > 15 and x > 0:
+#        cl1.append([x, y])
+#    elif y < 15 and y > 0 and x > 0:
+#        cl2.append([x, y])
+#
+#print(abs(get_centers(cl1)[0] - get_centers(cl2)[0]), abs(get_centers(cl1)[1] - get_centers(cl2)[1]))
+
+
+
+cl1 = []
+cl2 = []
+cl3 = []
+
+file = open('27B.txt')
+for s in file:
+    point = s.split()
+    x, y = float(point[0]), float(point[1])
+    if y > 5 and x > -1 and x < -0.5:
+        cl1.append([x, y])
+    elif y < 5 and x < 0 and x > -1:
+        cl2.append([x, y])
+    elif y < 5 and x < -1 and x > -2:
+        cl3.append([x, y])
+
