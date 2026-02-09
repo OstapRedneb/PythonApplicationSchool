@@ -1161,19 +1161,19 @@ def dell(n, k=2):
 
 
 
-def get_centers(cl1):
-    centers1 = [10**19, -1, -1]
-    for point1 in cl1:
-        x1, y1 = point1[0], point1[1]
-        clSum = 0
-        for point2 in cl1:
-            if point1 != point2:
-                x2, y2 = point2[0], point2[1]
-                clSum += ((x1 - x2)**2 + (y1 - y2)**2)**0.5
-        if clSum < centers1[0]:
-            centers1 = [clSum, x1, y1]
-
-    return centers1[1:]
+#def get_centers(cl1):
+#    centers1 = [10**19, -1, -1]
+#    for point1 in cl1:
+#        x1, y1 = point1[0], point1[1]
+#        clSum = 0
+#        for point2 in cl1:
+#            if point1 != point2:
+#                x2, y2 = point2[0], point2[1]
+#                clSum += ((x1 - x2)**2 + (y1 - y2)**2)**0.5
+#        if clSum < centers1[0]:
+#            centers1 = [clSum, x1, y1]
+#
+#    return centers1[1:]
 
 
 
@@ -1193,18 +1193,193 @@ def get_centers(cl1):
 
 
 
-cl1 = []
-cl2 = []
-cl3 = []
 
-file = open('27B.txt')
-for s in file:
-    point = s.split()
-    x, y = float(point[0]), float(point[1])
-    if y > 5 and x > -1 and x < -0.5:
-        cl1.append([x, y])
-    elif y < 5 and x < 0 and x > -1:
-        cl2.append([x, y])
-    elif y < 5 and x < -1 and x > -2:
-        cl3.append([x, y])
+#cl1 = []
+#cl2 = []
+#cl3 = []
+#
+#file = open('27B.txt')
+#for s in file:
+#    point = s.split()
+#    x, y = float(point[0]), float(point[1])
+#    if y > 5 and x > -1 and x < -0.5:
+#        cl1.append([x, y])
+#    elif y < 5 and x < 0 and x > -1:
+#        cl2.append([x, y])
+#    elif y < 5 and x < -1 and x > -2:
+#        cl3.append([x, y])
 
+
+
+
+
+
+
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((not(x)) <= (not(y))) and z and not(w == z):
+#                    print(f'{w} {z} {y} {x}')
+
+#def Bild(n):
+#    n -= n % 2
+#    x = bin(n)[2:]
+#    if x.count('0') % 2 == 0:
+#        x += '1'
+#        x = '10' + x[2:]
+#    else:
+#        x += '0'
+#        x = '11' + x[2:]
+#    return int(x, 2)
+#
+#for n in range(1, 10000):
+#    r = Bild(n)
+#    if r > 50:
+#        print(n)
+#        break
+
+
+#def GetStrMore9(s):
+#    for c in s:
+#        if int(c, 20) > 9:
+#            s = s.replace(c, 'a')
+#    return s
+#
+#def GetModStr(s):
+#    return s.replace('0', '0').replace('2', '0').replace('4', '0').replace('6', '0').replace('8', '0').replace('a', '0').replace('c', '0').replace('e', '0').replace('g', '0').replace('i', '0')
+#
+#k = 0
+#for s in product('0123456789abcdefghij', repeat=5):
+#    s = ''.join(s)
+#    if s[0] != '0' and GetModStr(s).count('0') <= 3 and GetStrMore9(s).count('a') >= 2:
+#        k += 1
+#print(k)
+
+
+#file = open("File1.txt")
+#k = 0
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    nums.sort()
+#    if nums[-1] <= (nums[0] + nums[1] + nums[2]) / 3 or str(nums[0])[-1] == str(nums[1])[-1] == str(nums[2])[-1] == str(nums[3])[-1]:
+#        k += 1
+#print(k)
+
+#print(2**(1024*8/512))
+
+#print(bin(21_418)[2:])
+
+#k = 0
+#n = ip_network('108.35.239.240/255.255.255.248', 0)
+#for ip in n:
+#    b = f'{ip:b}'
+#    if b.count('0') % 3 == 0:
+#        k += 1
+#print(k)
+
+#c = 12
+#nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C']
+#
+#for x in nums:
+#    k = 0
+#    for y in nums:
+#        p = int(f'CC68{x}{y}', 13) + int(f'2{y}343{x}7', 13)
+#        if p % 7 == 0:
+#            k += 1
+#    if k == 13:
+#        print(x)
+#        break
+#print ((int(f'CC6833', 13) + int(f'2334337', 13)) / 7)
+
+#def Del(n, m):
+#    return n % m == 0
+#
+#list = []
+#for a in range(1, 1500):
+#    k = 0
+#    for x in range(1, 1500):
+#        if (Del(x, 20) <= (not(Del(x, 11)))) or (a < 3*x + 600):
+#            k += 1
+#    if k == 1499:
+#        list.append(a)
+#print(list[-1])
+
+
+#def div(m):
+#    k = 1
+#    for e in m:
+#        k *= e
+#    return k
+#
+#def f(n):
+#    if n < 100:
+#        return 4 * n
+#    if n > 99 and n % 2 == 0:
+#        return 35 + f(n - 1)
+#    return 2 * f(n - 1)
+#
+#print(div(map(int, str(f(151) * 6).replace('0', '1'))))
+
+
+
+
+#k = 20
+#screensize(1000, 1000)
+#tracer(0)
+#speed(2000)
+#
+#for i in range(101):
+#    forward(10*k)
+#    left(90)
+#    forward(4*k)
+#up()
+#forward(5*k)
+#right(90)
+#for i in range(201):
+#    back(12*k)
+#    right(90)
+#for i in range(301):
+#    forward(11*k)
+#    left(90)
+#    forward(4*k)
+#
+#for x in range(-50, 50):
+#    for y in range(-50, 50):
+#        goto(x*k, y*k)
+#        dot()
+#done()
+
+
+#setrecursionlimit(10**9)
+#
+#def f(n):
+#    if n <= 10:
+#        return n + 1_000_000
+#    return 6 * f(n - 5) - 4 * f(n - 6) - f(n - 10)
+#
+#print(f(31) - f(30))
+
+
+
+#def Is2Norm(n1, n2, n3):
+#    return ((0 < n1 and n1 == abs(n1)) + (0 < n2 and n2 == abs(n2)) + (0 < n3 and n3 == abs(n3))) == 2
+#
+#file = open('17.txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if 10 <= x <= 99])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if Is2Norm(nums[i], nums[i+1], nums[i+2]) and sum([nums[i], nums[i+1], nums[i+2]]) % maxn == 0]
+#print(len(t), max(t))
+
+
+#def DoGame(x, k):
+#    if k == 0: return 0
+#    if x >= 500: return k % 2 == 0
+#
+#    h = [DoGame(x + 4, k - 1), DoGame(x + 3, k - 1), DoGame(x * 5, k - 1)]
+#    return sum(h) if k % 2 != 0 else any(h)
+#
+#print('19', [x for x in range(1, 500) if DoGame(x, 2)])
+#print('20', [x for x in range(1, 500) if DoGame(x, 3) and not DoGame(x, 1)])
+#print('21', [x for x in range(1, 500) if DoGame(x, 4) and not DoGame(x, 2)])
