@@ -1,6 +1,8 @@
+import fnmatch
 from turtle import*
 from itertools import*
 from ipaddress import*
+from fnmatch import*
 
 ##������� 2
 #for x in range(0, 2):
@@ -650,20 +652,79 @@ def SumOct(s):
 
 
 
-f=open('26 (5).txt')
-n=int(f.readline())
-trees = []
-for s in f.readlines():
-    a = s.split()
-    ryad, mesto = 0, 0
-    trees.append([ryad, mesto])
-trees.sort()
-mx_rayd=0
-mn_mesto=0
-for i in range(1, len(trees)):
-    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
-        if trees[i][0] > mx_rayd:
-            mx_rayd = trees[i][0]
-            mn_mesto = trees[i-1][1] + 1
-       
-print('423 501') 
+#f=open('26 (5).txt')
+#n=int(f.readline())
+#trees = []
+#for s in f.readlines():
+#    a = s.split()
+#    ryad, mesto = 0, 0
+#    trees.append([ryad, mesto])
+#trees.sort()
+#mx_rayd=0
+#mn_mesto=0
+#for i in range(1, len(trees)):
+#    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+#        if trees[i][0] > mx_rayd:
+#            mx_rayd = trees[i][0]
+#            mn_mesto = trees[i-1][1] + 1
+#       
+#print('423 501') 
+
+
+
+def GetDels(number):
+    hashSet = set()
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            hashSet.add(i)
+            hashSet.add(number // i)
+    return list(hashSet)
+
+def IsSimple(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+def IsSost(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return True
+    return False
+
+def CountDelsUntil(number, dell):
+    k = 0
+    while number != 0:
+        if number % dell == 0:
+            k += 1
+            number //= dell
+            continue
+        break
+
+    return k == 5
+
+
+#for i in range(5_000_012, 7_000_000, 100):
+#    simpleDels = [number for number in GetDels(i) if IsSimple(number)]
+#    for dell in simpleDels:
+#        if CountDelsUntil(i, dell):
+#            print(i, dell)
+#            break
+
+#for i in range(7_800_000, 8_000_000):
+#    simpleDels = [number for number in GetDels(i) if IsSimple(number)]
+#    if simpleDels:
+#        m = min(simpleDels) + max(simpleDels)
+#        if m % 100 == 63 and m % len(simpleDels) == 0:
+#            print(i, m)
+#
+
+
+
+for i in range(22768, 10**8, 22768):
+    if fnmatch(str(i), '1*03*6*'):
+        s = str(i)
+        if s[1:s.index('03')]:
+            if IsSost(int(s[1:s.index('03')])):
+                print(i, s[1:s.index('03')])
+
