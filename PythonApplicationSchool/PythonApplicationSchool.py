@@ -1383,3 +1383,14 @@ def dell(n, k=2):
 #print('19', [x for x in range(1, 500) if DoGame(x, 2)])
 #print('20', [x for x in range(1, 500) if DoGame(x, 3) and not DoGame(x, 1)])
 #print('21', [x for x in range(1, 500) if DoGame(x, 4) and not DoGame(x, 2)])
+
+
+def CheckNums(n1, n2, n3):
+    return ((1000 <= abs(n1) < 10_000) + (1000 <= abs(n2) < 10_000) + (1000 <= abs(n3) < 10_000)) >= 2
+
+
+file = open('17.txt').read()
+nums = [int(x) for x in file.split()]
+minnum = min([x for x in nums if 1000 <= x < 10_000])
+t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if CheckNums(nums[i], nums[i+1], nums[i+2]) and (nums[i] + nums[i+1] + nums[i+2]) <= minnum]
+print(len(t), max(t))
