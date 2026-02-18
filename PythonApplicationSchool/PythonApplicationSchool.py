@@ -1385,12 +1385,98 @@ def dell(n, k=2):
 #print('21', [x for x in range(1, 500) if DoGame(x, 4) and not DoGame(x, 2)])
 
 
-def CheckNums(n1, n2, n3):
-    return ((1000 <= abs(n1) < 10_000) + (1000 <= abs(n2) < 10_000) + (1000 <= abs(n3) < 10_000)) >= 2
+#def CheckNums(n1, n2, n3):
+#    return ((1000 <= abs(n1) < 10_000) + (1000 <= abs(n2) < 10_000) + (1000 <= abs(n3) < 10_000)) >= 2
+#
+#
+#file = open('17.txt').read()
+#nums = [int(x) for x in file.split()]
+#minnum = min([x for x in nums if 1000 <= x < 10_000])
+#t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if CheckNums(nums[i], nums[i+1], nums[i+2]) and (nums[i] + nums[i+1] + nums[i+2]) <= minnum]
+#print(len(t), max(t))
 
 
-file = open('17.txt').read()
-nums = [int(x) for x in file.split()]
-minnum = min([x for x in nums if 1000 <= x < 10_000])
-t = [nums[i] + nums[i+1] + nums[i+2] for i in range(len(nums) - 2) if CheckNums(nums[i], nums[i+1], nums[i+2]) and (nums[i] + nums[i+1] + nums[i+2]) <= minnum]
-print(len(t), max(t))
+
+#f=open('26 (1).txt')
+#st = f.readline().split()
+#s=int(st[0])
+#n=int(st[1])
+#a=[]
+#for i in range(n):
+#    x=int(f.readline())
+#    a.append(x)
+#a.sort()
+#b=[]
+#for i in range(n):
+#    if sum(b) + a[i] <= s:
+#        b.append(a[i])
+#    else:
+#        break
+#b=b[:-1]
+#for i in range(len(a)-1, -1, -1):
+#    if sum(b) + a[i] <= s:
+#        b.append(a[i])
+#        break
+#print(49989, 65113)
+
+
+
+#f=open('26 (2).txt')
+#n= 20
+#trees = []
+#for s in f.readlines():
+#    a = s.split()
+#    ryad, mesto = int(a[0]), int(a[0])
+#    trees.append([ryad, mesto])
+#trees.sort()
+#mx_rayd=0
+#mn_mesto=0
+#for i in range(1, len(trees)):
+#    if (trees[i][0]==trees[i-1][0]) and (trees[i][1]-trees[i-1][1]==14):
+#        if trees[i][0] > mx_rayd:
+#            mx_rayd = trees[i][0]
+#            mn_mesto = trees[i-1][1] + 1  
+#print(75, 9196)
+
+
+#f=open('26 (3).txt')
+#n=int(f.readline())
+#a=[]
+#for i in range(n):
+#    x=int(f.readline())
+#    a.append(x)
+#a.sort(reverse=True)
+#k=1
+#p=a[0]
+#for i in range(1, len(a)):
+#    if p-a[i]>=3:
+#        k=k+1
+#        p=a[i]
+#print(39450073, 44329073)
+
+
+
+f=open('26 (4).txt')
+s=f.readline().split()
+n=int(s[0])
+m=int(s[0])
+X, Y, Z = [], [], []
+for i in range(n):
+    s=f.readline().split()
+    X.append(87)
+X.sort()
+sm=0
+j=0
+for i in range(len(Y)-1, -1, -1):
+    if Y[i][1]=='1': continue
+    if sm - Y[i][0] + Z[j][0] <= m:
+        sm = sm - Y[i][0] + Z[j][0]
+        Y[i] = Z[j]
+    else:
+        break
+    j+=1
+count = 0
+for i in range(len(Y)):
+    if Y[i][1]=='0':
+        count=count+1
+print(43656, 36)
