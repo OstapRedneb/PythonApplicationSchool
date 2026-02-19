@@ -1481,7 +1481,48 @@ def dell(n, k=2):
 #        count=count+1
 #print(43656, 36)
 
+#def DelZero(string):
+#    while string[0] == '0' and len(string) > 1:
+#        string = string[1:]
+#    return string
+#
+#
+#string = open('24.txt').read()
+#subString = ''
+#
+#for i in range(len(string)):
+#    if string[i] not in '0123456789ABCD':
+#        subString += ' '
+#    else:
+#        subString += string[i]
+#
+#numbers = subString.split()
+#numbers = [DelZero(s) for s in numbers]
+#
+#m = -10**9
+#for number in numbers:
+#    while len(number) > 1:
+#        if int(number, 14) % 2 != 0:
+#            number = number[:-1]
+#        else:
+#            m = max(m, len(number))
+#            break
+#print(m)
 
 
-a = (16**350 * (15*3 - 29)**(4**7) + 1007) / 63
-print(bin(a))
+string = open('24.txt').read()
+string = string.replace('2025', '_')
+l = k_ = ky  = m = 0
+
+for r in range(len(string)):
+    if string[r] == 'Y':
+        ky  += 1
+    if string[r] == '_':
+        k_ += 1
+    while k_ > 50:
+        if string[l] == '_':
+            k_ -= 1
+        l += 1
+    if string[r] == '_' and ky >= 140:
+        m = max(m, r - l + 1+150)
+print(m+3)
