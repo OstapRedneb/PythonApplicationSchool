@@ -1456,27 +1456,32 @@ def dell(n, k=2):
 
 
 
-f=open('26 (4).txt')
-s=f.readline().split()
-n=int(s[0])
-m=int(s[0])
-X, Y, Z = [], [], []
-for i in range(n):
-    s=f.readline().split()
-    X.append(87)
-X.sort()
-sm=0
-j=0
-for i in range(len(Y)-1, -1, -1):
-    if Y[i][1]=='1': continue
-    if sm - Y[i][0] + Z[j][0] <= m:
-        sm = sm - Y[i][0] + Z[j][0]
-        Y[i] = Z[j]
-    else:
-        break
-    j+=1
-count = 0
-for i in range(len(Y)):
-    if Y[i][1]=='0':
-        count=count+1
-print(43656, 36)
+#f=open('26 (4).txt')
+#s=f.readline().split()
+#n=int(s[0])
+#m=int(s[0])
+#X, Y, Z = [], [], []
+#for i in range(n):
+#    s=f.readline().split()
+#    X.append(87)
+#X.sort()
+#sm=0
+#j=0
+#for i in range(len(Y)-1, -1, -1):
+#    if Y[i][1]=='1': continue
+#    if sm - Y[i][0] + Z[j][0] <= m:
+#        sm = sm - Y[i][0] + Z[j][0]
+#        Y[i] = Z[j]
+#    else:
+#        break
+#    j+=1
+#count = 0
+#for i in range(len(Y)):
+#    if Y[i][1]=='0':
+#        count=count+1
+#print(43656, 36)
+
+
+
+a = (16**350 * (15*3 - 29)**(4**7) + 1007) / 63
+print(bin(a))
