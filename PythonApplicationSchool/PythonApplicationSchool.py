@@ -1510,19 +1510,98 @@ def dell(n, k=2):
 #print(m)
 
 
-string = open('24.txt').read()
-string = string.replace('2025', '_')
-l = k_ = ky  = m = 0
+#string = open('24.txt').read()
+#string = string.replace('2025', '_')
+#l = k_ = ky  = m = 0
+#
+#for r in range(len(string)):
+#    if string[r] == 'Y':
+#        ky  += 1
+#    if string[r] == '_':
+#        k_ += 1
+#    while k_ > 50:
+#        if string[l] == '_':
+#            k_ -= 1
+#        l += 1
+#    if string[r] == '_' and ky >= 140:
+#        m = max(m, r - l + 1+150)
+#print(m+3)
 
-for r in range(len(string)):
-    if string[r] == 'Y':
-        ky  += 1
-    if string[r] == '_':
-        k_ += 1
-    while k_ > 50:
-        if string[l] == '_':
-            k_ -= 1
-        l += 1
-    if string[r] == '_' and ky >= 140:
-        m = max(m, r - l + 1+150)
-print(m+3)
+
+
+#def DelZero(string):
+#    while string[0] == '0' and len(string) > 1:
+#        string = string[1:]
+#    return string
+#
+#
+#string = open('24_1.txt').read()
+#subString = ''
+#
+#for i in range(len(string)):
+#    if string[i] not in '0123456789ABCD':
+#        subString += ' '
+#    else:
+#        subString += string[i]
+#
+#numbers = subString.split()
+#numbers = [DelZero(s) for s in numbers]
+#
+#m = -10**9
+#for number in numbers:
+#    while len(number) > 1:
+#        if int(number, 14) % 2 != 0:
+#            number = number[:-1]
+#        else:
+#            m = max(m, len(number))
+#            break
+#print(m)
+
+
+
+#string = open('24_2.txt').read()
+#substring = ''
+#
+#for i in range(len(string)):
+#    if string[i] in '13579':
+#        substring += '1'
+#    else:
+#        substring += string[i]
+#
+#l = k1 = kg = m = 0
+#
+#string = substring
+#
+#for r in range(len(string)):
+#    if string[r] == '1':
+#        k1 += 1
+#    if string[r] == 'G':
+#        kg += 1
+#    while k1 > 45 or kg > 1:
+#        if string[l] == '1':
+#            k1 -= 1
+#        if string[l] == 'G':
+#            kg -= 1
+#        l += 1
+#    if string[l] == 'G':
+#        m = max(m, r - l + 1)
+#print(m)
+
+
+
+#string = open('24.txt').read()
+#string = string.replace('2025', '_')
+#l = k_ = ky  = m = 0
+#
+#for r in range(len(string)):
+#    if string[r] == 'Y':
+#        ky  += 1
+#    if string[r] == '_':
+#        k_ += 1
+#    while k_ > 50:
+#        if string[l] == '_':
+#            k_ -= 1
+#        l += 1
+#    if string[r] == '_' and ky >= 140:
+#        m = max(m, r - l + 1+150)
+#print(m+3)
