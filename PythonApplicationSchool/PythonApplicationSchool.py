@@ -1605,3 +1605,28 @@ def dell(n, k=2):
 #    if string[r] == '_' and ky >= 140:
 #        m = max(m, r - l + 1+150)
 #print(m+3)
+
+
+def GetDels(number):
+    hashSet = set()
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            hashSet.add(i)
+            hashSet.add(number // i)
+    return list(hashSet)
+
+def IsSimple(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+
+i = 0
+for n in range(7_800_000, 8_000_000):
+    Dels = [x for x in GetDels(n) if IsSimple(x)]
+    if len(Dels) > 0:
+        m = min(Dels) + max(Dels)
+        if m % 100 == 63 and m % len(Dels) == 0 and i < 5:
+            i += 1
+            print(n, m)
