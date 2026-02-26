@@ -1,3 +1,5 @@
+from calendar import c
+from fnmatch import*
 from functools import lru_cache
 from sys import setrecursionlimit
 from turtle import*
@@ -1630,3 +1632,58 @@ def dell(n, k=2):
 #        if m % 100 == 63 and m % len(Dels) == 0 and i < 5:
 #            i += 1
 #            print(n, m)
+
+
+
+#def IsCorrect(string):
+#    return string.count('F') >= 76
+#
+#def InsertString(string):
+#    kf = 0
+#    substring = ''
+#    for i in range(len(string)):
+#        if string[i] == 'F':
+#            kf += 1
+#        if kf == 77:
+#            return string[0:i]
+#    return string
+#
+#
+#string = open('24.txt').read()
+#subString = ''
+#for char in string:
+#    if char in '02468':
+#        subString += '0'
+#    else:
+#        subString += char
+#
+#
+#string = subString
+#
+#l=m=kf=k0=0
+#
+#stringList = string.split('0')
+#correctList = [InsertString(s) for s in stringList if IsCorrect(s)]
+#print(len(max(correctList, key=len)))
+
+
+string = open('24.txt').read()
+
+l=m=k=0
+r=6
+
+while(r < len(string) - 6):
+    if fnmatch(string[r:r+7], '2?0?2?6'):
+        k += 1
+        r += 6
+            
+    while k > 10:
+        l += 1
+        if fnmatch(string[l:l+7], '2?0?2?6'):
+            k -= 1
+            l += 6
+    
+    m = max(m, r - l + 1)         
+    r += 1
+
+print(m)
