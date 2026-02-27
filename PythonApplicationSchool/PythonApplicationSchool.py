@@ -13,6 +13,9 @@ from ipaddress import*
 #                    print(f"{x} {y} {z} {w}")
 
 
+ab = 102885396
+corNums = 2617
+
 ## ������� 6
 #
 #k = 15
@@ -1733,5 +1736,122 @@ def SumOct(s):
 
 
 
+def GetDels(number):
+    hashSet = set()
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            hashSet.add(i)
+            hashSet.add(number // i)
+    return list(hashSet)
 
-for i in range(2_460_070, 4_000_000):
+def IsSimple(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+def IsSost(number):
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return True
+    return False
+
+#i = 0
+#for n in range(2_460_070, 4_000_000):
+#    dels = GetDels(n)
+#    corDels = [x for x in dels if x % 100 == 13]
+#    if any([x != 13 and x != n for x in corDels]):
+#        i += 1
+#        print(n, min(corDels))
+#        if i > 5:
+#           break
+
+
+
+
+#A = 78
+#B = 63
+
+
+#file = open('26 (1).txt').read()
+#m1 = int(file.split()[1])
+#datas = file.split('\n')[1:]
+#
+#m = [100000, -1]
+#for i in range(len(datas)):
+#    if m[0] > int(datas[i].split()[2]):
+#        m = [int(datas[i].split()[2]), int(datas[i].split()[0])]
+#print(m)
+#
+#ab += sum([int(x.split()[2])*0 for x in datas if x.split()[0] == '78']) + sum([int(x.split()[2])*0 for x in datas if x.split()[0] == '44'])
+#
+#
+#corNumss = [int(x.split()[1]) for x in datas if int(x.split()[0]) >= int(ab / 100 * m1)]
+#if any([x >= int(ab / 100 * m1) for x in corNumss]):
+#    corNums += sum(corNumss)
+#
+#print(ab, corNums)
+
+
+
+def FindCenter(cl):
+    sr = [10**19, -1, -1]
+
+    for a in cl:
+        x, y = a[0], a[1]
+        r = 0
+        for b in cl:
+            if b != a:
+                x0, y0 = b[0], b[1]
+                r += ((x - x0)**2 + (y - y0)**2)**0.5
+
+        if r < sr[0]:
+            sr = [r, x, y]
+
+    return sr[1:]
+
+def GetCenterMaxR(FindCenter, cl):
+    x, y = FindCenter[0], FindCenter[1]
+    mr = [-1, 10**19]
+    for a in cl:
+        x0, y0 = a[0], a[1]
+        r = ((x - x0)**2 + (y - y0)**2)**0.5
+        mr = [max(mr[0], r), min(mr[1], r)]
+
+    return mr
+
+
+k = 10**4
+cl1, cl2 = [], []
+
+for i in open('27_A.txt'):
+    x, y = [float(x) for x in i.split()]
+
+    if y > 15:
+        cl1.append([x, y])
+    elif y < 15:
+        cl2.append([x, y])
+
+cena1, cena2 = FindCenter(cl1), FindCenter(cl2)
+
+mr1, mr2 = GetCenterMaxR(cena1, cl2), GetCenterMaxR(cena2, cl1)
+
+print(int(max(mr1[0], mr2[0]) * k), end=' ')
+print(int(min(mr1[1], mr2[1]) * k))
+
+cl2_1, cl2_2, cl2_3 = [], [], []
+
+for i in open('27_B.txt'):
+    x, y = [float(x) for x in i.split()]
+
+    if x < 0 and y > 0:
+        cl2_1.append([x, y])
+    elif x < 0 and y < 0:
+        cl2_2.append([x, y])
+    elif x > 1 and y < -2:
+        cl2_3.append([x, y])
+
+l = [len(cl2_1), len(cl2_2), len(cl2_3)]
+
+print(int(min(l) * k), end=' ')
+print(int(int(sum(l) / len(l)) * k))
