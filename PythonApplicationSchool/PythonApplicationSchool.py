@@ -1630,3 +1630,107 @@ def dell(n, k=2):
 #        if m % 100 == 63 and m % len(Dels) == 0 and i < 5:
 #            i += 1
 #            print(n, m)
+
+
+
+
+
+
+
+
+
+
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if ((not(x)) <= (not(y))) and z and not(w == z):
+#                    print(f'{w} {z} {y} {x}')
+
+#def Bild(n):
+#    n -= n % 2
+#    x = bin(n)[2:]
+#    if x.count('0') % 2 == 0:
+#        x += '1'
+#        x = '10' + x[2:]
+#    else:
+#        x += '0'
+#        x = '11' + x[2:]
+#    return int(x, 2)
+#
+#for n in range(1, 10000):
+#    r = Bild(n)
+#    if r > 50:
+#        print(43)
+#        break
+
+
+
+#k = 0
+#for s in product('австрия', repeat=7):
+#    s = ''.join(s)
+#    if s.count('в') <= 3 and (s.count('а') + s.count('и') + s.count('я')) > 0 and (s.count('а') + s.count('и') + s.count('я')) % 2 == 0:
+#        k += 1
+#print(k)
+
+
+#print(bin(96)[2:])
+
+
+
+#print(2**(1024*8/512))
+
+#print(bin(21_418)[2:])
+
+#k = 0
+#n = ip_network('173.142.100.17/255.255.254.0', 0)
+#for ip in n:
+#    print(ip)
+
+
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n >= 110000:
+#        return n + 4
+#    return (n + 7) * f(n + 12)
+#
+#for n in range(220024,0,-1): f(n)
+#print((f(113) + f(137)) / (2 * f(149)))
+
+
+
+#def DoGame(x, y, k):
+#
+#    if x * y >= 617: return k % 2 == 0
+#    if k == 0: return 0
+#
+#
+#    h = [DoGame(x + 8, y, k - 1), DoGame(x * 2, y, k - 1), DoGame(x, y + 8, k - 1), DoGame(x, y * 2, k - 1)]
+#    return sum(h) if k % 2 != 0 else any(h)
+#
+#print('19', [x for x in range(1, 89) if DoGame(7, x, 2)])
+#print('20', [x for x in range(1, 89) if DoGame(7, x, 3) and not DoGame(x, 7, 1)])
+#print('21', [x for x in range(1, 89) if DoGame(7, x, 4) and not DoGame(x, 7, 2)])
+
+
+
+def f(x, n=0):
+
+    if x < 3:
+        return 0
+    if x == 3:
+        return n
+    if x == 12:
+        n = 1
+    if x == 9:
+        return 0
+
+    h = [f(x - 1, n), f(x - 3, n), f(x // 3, n)]
+
+    return sum(h)
+
+print(f(21))
