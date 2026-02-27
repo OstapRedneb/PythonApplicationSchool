@@ -721,11 +721,7 @@ def SumOct(s):
 
 
 
-def dell(n, k=2):
-    for i in range(k, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return [i] + dell(n//i, i)
-    return sorted([n])
+
 
 # for i in range(2700034, 10**19, 100):
 #     s = dell(i)
@@ -1718,19 +1714,24 @@ def dell(n, k=2):
 
 
 
-def f(x, n=0):
+#def f(x, n=0):
+#
+#    if x < 3:
+#        return 0
+#    if x == 3:
+#        return n
+#    if x == 12:
+#        n = 1
+#    if x == 9:
+#        return 0
+#
+#    h = [f(x - 1, n), f(x - 3, n), f(x // 3, n)]
+#
+#    return sum(h)
+#
+#print(f(21))
 
-    if x < 3:
-        return 0
-    if x == 3:
-        return n
-    if x == 12:
-        n = 1
-    if x == 9:
-        return 0
 
-    h = [f(x - 1, n), f(x - 3, n), f(x // 3, n)]
 
-    return sum(h)
 
-print(f(21))
+for i in range(2_460_070, 4_000_000):
