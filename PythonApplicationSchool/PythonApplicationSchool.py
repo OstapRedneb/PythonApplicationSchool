@@ -1794,64 +1794,232 @@ def IsSost(number):
 
 
 
-def FindCenter(cl):
-    sr = [10**19, -1, -1]
+#def FindCenter(cl):
+#    sr = [10**19, -1, -1]
+#
+#    for a in cl:
+#        x, y = a[0], a[1]
+#        r = 0
+#        for b in cl:
+#            if b != a:
+#                x0, y0 = b[0], b[1]
+#                r += ((x - x0)**2 + (y - y0)**2)**0.5
+#
+#        if r < sr[0]:
+#            sr = [r, x, y]
+#
+#    return sr[1:]
+#
+#def GetCenterMaxR(FindCenter, cl):
+#    x, y = FindCenter[0], FindCenter[1]
+#    mr = [-1, 10**19]
+#    for a in cl:
+#        x0, y0 = a[0], a[1]
+#        r = ((x - x0)**2 + (y - y0)**2)**0.5
+#        mr = [max(mr[0], r), min(mr[1], r)]
+#
+#    return mr
+#
+#
+#k = 10**4
+#cl1, cl2 = [], []
+#
+#for i in open('27_A.txt'):
+#    x, y = [float(x) for x in i.split()]
+#
+#    if y > 15:
+#        cl1.append([x, y])
+#    elif y < 15:
+#        cl2.append([x, y])
+#
+#cena1, cena2 = FindCenter(cl1), FindCenter(cl2)
+#
+#mr1, mr2 = GetCenterMaxR(cena1, cl2), GetCenterMaxR(cena2, cl1)
+#
+#print(int(max(mr1[0], mr2[0]) * k), end=' ')
+#print(int(min(mr1[1], mr2[1]) * k))
+#
+#cl2_1, cl2_2, cl2_3 = [], [], []
+#
+#for i in open('27_B.txt'):
+#    x, y = [float(x) for x in i.split()]
+#
+#    if x < 0 and y > 0:
+#        cl2_1.append([x, y])
+#    elif x < 0 and y < 0:
+#        cl2_2.append([x, y])
+#    elif x > 1 and y < -2:
+#        cl2_3.append([x, y])
+#
+#l = [len(cl2_1), len(cl2_2), len(cl2_3)]
+#
+#print(int(min(l) * k), end=' ')
+#print(int(int(sum(l) / len(l)) * k))
 
-    for a in cl:
-        x, y = a[0], a[1]
-        r = 0
-        for b in cl:
-            if b != a:
-                x0, y0 = b[0], b[1]
-                r += ((x - x0)**2 + (y - y0)**2)**0.5
-
-        if r < sr[0]:
-            sr = [r, x, y]
-
-    return sr[1:]
-
-def GetCenterMaxR(FindCenter, cl):
-    x, y = FindCenter[0], FindCenter[1]
-    mr = [-1, 10**19]
-    for a in cl:
-        x0, y0 = a[0], a[1]
-        r = ((x - x0)**2 + (y - y0)**2)**0.5
-        mr = [max(mr[0], r), min(mr[1], r)]
-
-    return mr
 
 
-k = 10**4
-cl1, cl2 = [], []
 
-for i in open('27_A.txt'):
-    x, y = [float(x) for x in i.split()]
 
-    if y > 15:
-        cl1.append([x, y])
-    elif y < 15:
-        cl2.append([x, y])
 
-cena1, cena2 = FindCenter(cl1), FindCenter(cl2)
+#for x in range(0, 2):
+#    for y in range(0, 2):
+#        for z in range(0, 2):
+#            for w in range(0, 2):
+#                if (((w <= y) <= x) or (not(z))) == 0:
+#                    print(x,y,z,w)
 
-mr1, mr2 = GetCenterMaxR(cena1, cl2), GetCenterMaxR(cena2, cl1)
 
-print(int(max(mr1[0], mr2[0]) * k), end=' ')
-print(int(min(mr1[1], mr2[1]) * k))
+#def f(n):
+#    x = bin(n)[2:]
+#    if n % 6:
+#        x += bin((n % 6)*3)[2:]
+#    else:
+#        x += x[-3:]
+#    return int(x, 2)
+#
+#mn = [0, -1]
+#for n in range(1, 1000):
+#    r = f(n)
+#    if r < 500:
+#        if mn[0] <= r:
+#            mn = [r, n]
+#print(mn)
 
-cl2_1, cl2_2, cl2_3 = [], [], []
 
-for i in open('27_B.txt'):
-    x, y = [float(x) for x in i.split()]
 
-    if x < 0 and y > 0:
-        cl2_1.append([x, y])
-    elif x < 0 and y < 0:
-        cl2_2.append([x, y])
-    elif x > 1 and y < -2:
-        cl2_3.append([x, y])
+#st = 2
+#f = 33000
+#i = 24
+#V = 576892000
+#t = 1*60*60 + 7*60 + 50
+#
+#I = f * st * t * i + 100*1024*8
+#
+#T = I / V
+#print(T)
 
-l = [len(cl2_1), len(cl2_2), len(cl2_3)]
 
-print(int(min(l) * k), end=' ')
-print(int(int(sum(l) / len(l)) * k))
+#k = 0
+#for s in product('ботай', repeat=6):
+#    s = ''.join(s)
+#    if 'йойо' not in s:
+#        k += 1
+#print(k)
+
+
+#k = 0
+#file = open('File1.txt')
+#
+#for s in file:
+#    nums = [int(x) for x in s.split()]
+#    n2 = [x for x in nums if nums.count(x) == 2]
+#    n1 = [x for x in nums if nums.count(x) == 1]
+#    if len(n2) == 4 and len(n1) == 3 and min(n2) > min(n1):
+#        k += 1
+#print(k)
+
+
+#k = 80
+#I = 1*1024*1024 / 16384
+#i = int(I / k *8)
+#print(2**i)
+
+#def ToSystem(number, system=2):
+#    s = ''
+#    while number != 0:
+#        s = str(number % 3) + s
+#        number //= 3
+#    return s
+#
+#print(ToSystem(34066, 3))
+#print(int('11201201201', 3))
+
+#n = ip_network('172.16.148.95/255.255.248.0', 0)
+#for ip in n.hosts():
+#    print(ip)
+#print(172+16+151+254)
+
+
+
+#def f(x, y, a):
+#    return (1241651 != (5*x + y)) and (413184 != (x + 2*y)) or (a > x) or (a > y)
+#
+#for a in range(900_000, 1_000_000):
+#    if all([f(x, y, a) for x in range(500, 50000) for y in range(500, 50000)]):
+#        print(a)
+#        break
+
+
+#f, q, g = [0] * 11251, [0] * 11251, [0] * 11251
+#for n in range(0, 11251):
+#    if n < 21:
+#        q[n] = n + 4
+#    else:
+#        q[n] = q[n - 4] + 2
+#
+#for n in range(11250, 0, -1):
+#    if n <= 11240:
+#        g[n] = g[n + 3] + 2
+#    else: 
+#        g[n] = q[n]
+#
+#for n in range(11250, 0, -1):
+#    if n < 43:
+#        f[n] = g[n + 4]
+#    else:
+#        f[n] = 2 * f[n - 2] - f[n - 4] + 2
+#
+#print(f[2026])
+
+
+
+#@lru_cache(None)
+#
+#def f(n):
+#    if n < 43:
+#        return g(n + 4)
+#    return 2 * f(n - 2) - f(n - 4) + 2
+#
+#@lru_cache(None)
+#
+#def g(n):
+#    if n <= 11240:
+#        g(n + 3) + 2
+#    return q(n)
+#
+#@lru_cache(None)
+#
+#def q(n):
+#    if n < 21:
+#        return n + 4
+#    return q(n - 4) + 2
+#
+#for n in range(11250):
+#    q(n)
+#for n in range(11250, 0, -1):
+#    g(n)
+#for n in range(11250):
+#    f(n)
+#
+#print(f(2026))
+
+
+#file = open('17 (1).txt').read()
+#nums = [int(x) for x in file.split()]
+#maxn = max([x for x in nums if x % 100 == x and x % 10 == 3])
+#t = [nums[i] + nums[i+1] for i in range(len(nums) - 1) if ((nums[i] % 1000 == nums[i]) + (nums[i+1] % 1000 == nums[i+1])) == 1 and (int(str(nums[i] // 100)) % 2 == 0) and ((int(str(nums[i+1] // 100)[0])) % 2 == 0) and (nums[i] + nums[i+1]) % maxn == 0]
+#print(len(t)-1, min(t))
+
+
+def f(x, k):
+    if x >= 5110:
+        return k % 2 == 0
+    if k == 0:
+        return 0
+
+    h = [f(x + 1, k - 1), f(x + 4, k - 1), f(x * 2, k - 1)]
+    return sum(h) if k % 2 != 0 else all(h)
+
+print('19', [x for x in range(1, 5111) if f(x, 2)])
+print('20', [x for x in range(1, 5111) if f(x, 3) and not f(x, 1)])
+print('21', [x for x in range(1, 5111) if f(x, 4) and not f(x, 2)])
