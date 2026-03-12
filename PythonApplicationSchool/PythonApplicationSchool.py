@@ -6,6 +6,7 @@ from turtle import*
 from itertools import*
 from ipaddress import*
 
+
 ##������� 2
 #for x in range(0, 2):
 #    for y in range(0, 2):
@@ -1667,23 +1668,71 @@ def dell(n, k=2):
 #print(len(max(correctList, key=len)))
 
 
-string = open('24.txt').read()
+#string = open('24.txt').read()
+#
+#l=m=k=0
+#r=6
+#
+#while(r < len(string) - 6):
+#    if fnmatch(string[r:r+7], '2?0?2?6'):
+#        k += 1
+#        r += 6
+#            
+#    while k > 10:
+#        l += 1
+#        if fnmatch(string[l:l+7], '2?0?2?6'):
+#            k -= 1
+#            l += 6
+#    
+#    m = max(m, r - l + 1)         
+#    r += 1
+#
+#print(m)
 
-l=m=k=0
-r=6
+#def IsCorrectStr(string):
+#    return len(set(list(string))) >= 26
+#
+#def ChangeAllNumbers(string):
+#    for c in '0123456789':
+#        string = ' '.join(string.split(c))
+#    return string
+#
+#string = open('24.txt').read()
+#
+#string = ChangeAllNumbers(string)
+#
+#strings = string.split()
+#
+#corStrings = [s for s in strings if IsCorrectStr(s)]
+#
+#print(len(max(corStrings, key=len)))
 
-while(r < len(string) - 6):
-    if fnmatch(string[r:r+7], '2?0?2?6'):
-        k += 1
-        r += 6
-            
-    while k > 10:
-        l += 1
-        if fnmatch(string[l:l+7], '2?0?2?6'):
-            k -= 1
-            l += 6
-    
-    m = max(m, r - l + 1)         
-    r += 1
 
-print(m)
+
+#for a in range(0, 256):
+#    n = ip_network(f'192.214.{a}.184/255.255.255.224', 0)
+#    if all([f'{ip:b}'.count('1') > 15 for ip in n]):
+#        print(a)
+#        break
+
+
+#n = ip_network('111.222.0.124/255.255.224.0', 0)
+#for ip in n:
+#    byteIp = f'{ip:b}'
+#    if (byteIp.count('1') * byteIp.count('0')) % 2:
+#        print(sum([int(oc) for oc in str(ip).split('.')]))
+
+
+m = [-10**9, '']
+for oc1 in range(0, 32):
+    for oc2 in range(0, 32):
+        if oc1 + oc2 <= 31:
+            sumIp = 0
+            ips = f'{oc1}.{oc2}.0.0'
+            n = ip_network(f'{ips}/255.255.0.0', 0)
+            for ip in n.hosts():
+                sumIp += sum([int(oc) for oc in str(ip).split('.')]) == 31
+            if m[0] <= sumIp:
+                m = [sumIp, ips]
+print(m[1])
+
