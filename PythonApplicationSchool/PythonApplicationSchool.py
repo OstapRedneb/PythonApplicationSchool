@@ -2011,15 +2011,128 @@ def IsSost(number):
 #print(len(t)-1, min(t))
 
 
-def f(x, k):
-    if x >= 5110:
-        return k % 2 == 0
-    if k == 0:
-        return 0
+#def f(x, k):
+#    if x >= 5110:
+#        return k % 2 == 0
+#    if k == 0:
+#        return 0
+#
+#    h = [f(x + 1, k - 1), f(x + 4, k - 1), f(x * 2, k - 1)]
+#    return sum(h) if k % 2 != 0 else all(h)
+#
+#print('19', [x for x in range(1, 5111) if f(x, 2)])
+#print('20', [x for x in range(1, 5111) if f(x, 3) and not f(x, 1)])
+#print('21', [x for x in range(1, 5111) if f(x, 4) and not f(x, 2)])
 
-    h = [f(x + 1, k - 1), f(x + 4, k - 1), f(x * 2, k - 1)]
-    return sum(h) if k % 2 != 0 else all(h)
 
-print('19', [x for x in range(1, 5111) if f(x, 2)])
-print('20', [x for x in range(1, 5111) if f(x, 3) and not f(x, 1)])
-print('21', [x for x in range(1, 5111) if f(x, 4) and not f(x, 2)])
+
+
+
+
+
+##1
+#file = open('26.txt').read()
+#presents = [int(x) for x in file.split()]
+#presents.sort()
+#presents = presents[::-1]
+#
+#needPresents = [presents[0]]
+#needPresentsIndex = 0
+#
+#for i in range(1, len(presents)):
+#    if needPresents[needPresentsIndex] - presents[i] >= 11:
+#        needPresents.append(presents[i])
+#        needPresentsIndex += 1
+#
+#
+#print(len(needPresents), min(needPresents))
+#print(needPresents)
+
+
+# w1 = list(open('26.txt').read().split('\n'))
+# ks, ns = tuple(map(int, w1[:2]))
+# w1 = w1[2:]
+# s = []
+# for i in range(ks):
+#     s.append([i+1, []])
+# k, pastn = 0, -1
+# w = []
+# for i in range(len(w1)):
+#     a = list(w1[i].split(' '))
+#     a = [int(a[0]), int(a[1])]
+#     w.append(a)
+# w = sorted(w, key=lambda a : a[0])
+# for i in range(len(w)):
+#     a = w[i]
+#     for j in range(len(s)):
+#         if s[j][1] == []:
+#             s[j] = [j + 1, a]
+#             k += 1
+#             pastn = j + 1
+#             break
+#         elif s[j][1][1] < a[0]:
+#             s[j] = [j + 1, a]
+#             k += 1
+#             pastn = j + 1
+#             break
+# print(k, pastn)
+
+
+# w1 = list(open('26.txt').read().split('\n'))
+# ks, ns = tuple(map(int, w1[:2]))
+# w1 = w1[2:]
+# s = []
+# for i in range(ks):
+#     s.append([i+1, []])
+# k, pastn = 0, [-1, -1]
+# w = []
+# for i in range(len(w1)):
+#     a = list(w1[i].split(' '))
+#     a = [int(a[0]), int(a[1])]
+#     w.append(a)
+# w = sorted(w, key=lambda a : (a[0], a[1]))
+# kx = 0
+# for i in range(len(w)):
+#     if w[i][0] == w[i-1][0]:
+#         kx += 1
+#     a = w[i]
+#     for j in range(len(s)):
+#         if s[j][1] == []:
+#             s[j] = [j + 1, a]
+#             k += 1
+#             if pastn[0] < a[0]:
+#                 pastn = [a[0], j + 1]
+#             elif pastn[0] == a[0]:
+#                 pastn = [a[0], min(j + 1, pastn[1])]
+#             break
+#         elif s[j][1][1] < a[0]:
+#             s[j] = [j + 1, a]
+#             k += 1
+#             if pastn[0] < a[0]:
+#                 pastn = [a[0], j + 1]
+#             elif pastn[0] == a[0]:
+#                 pastn = [a[0], min(j + 1, pastn[1])]
+#             break
+# print(k, pastn[1])
+
+
+file = open('26.txt').read().split('\n')
+
+n = int(file[0].split()[0])
+k = int(file[0].split()[1])
+
+cells = [[i, int(file[i], [])] for i in range(1, 1 + n)]
+users = [[int(file[i].split()[0]), int(file[i].split()[1])] for i in range(1 + n, 1 + n + k)]
+users = [user for user in users if user[0] + user[1] <= 15 * 60]
+
+cells.sort(key=lambda cell: cell[1])
+users.sort(key=lambda user: user[0])
+
+
+for user in users:
+    for cell in cells:
+        usersInCell = cell[2]
+        if len(usersInCell[-1]) > 0:
+            if usersInCell[-1][0] + usersInCell[-1][1] <= user[0]:
+                cell[2].append(user)
+                break
