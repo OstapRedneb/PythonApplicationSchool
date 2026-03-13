@@ -2121,7 +2121,7 @@ file = open('26.txt').read().split('\n')
 n = int(file[0].split()[0])
 k = int(file[0].split()[1])
 
-cells = [[i, int(file[i], [])] for i in range(1, 1 + n)]
+cells = [[i, int(file[i]), []] for i in range(1, 1 + n)]
 users = [[int(file[i].split()[0]), int(file[i].split()[1])] for i in range(1 + n, 1 + n + k)]
 users = [user for user in users if user[0] + user[1] <= 15 * 60]
 
@@ -2132,7 +2132,13 @@ users.sort(key=lambda user: user[0])
 for user in users:
     for cell in cells:
         usersInCell = cell[2]
-        if len(usersInCell[-1]) > 0:
+        if len(usersInCell) > 0:
             if usersInCell[-1][0] + usersInCell[-1][1] <= user[0]:
                 cell[2].append(user)
-                break
+            else:
+                continue
+        else:
+            cell[2] = [user]
+        break
+
+print(sum([cell[1] for cell in cells if len(cell[2]) > 0]), max([cell[0] for cell in cells if len(cell[2]) > 0]))
